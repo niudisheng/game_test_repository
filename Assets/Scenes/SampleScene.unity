@@ -732,14 +732,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db6f7b1f33399274a884e04dfc28db59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   bagPenel: {fileID: 1128061502}
   player: {fileID: 0}
   playerBag: {fileID: 11400000, guid: 8ab765fcc1259f746844854a6ded46ab, type: 2}
-=======
-  bagPenel: {fileID: 0}
-  player: {fileID: 0}
->>>>>>> 程序黑猫的泪痣
 --- !u!1 &1549463603
 GameObject:
   m_ObjectHideFlags: 0

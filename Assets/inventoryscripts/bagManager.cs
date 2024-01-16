@@ -8,7 +8,6 @@ public class bagManager : MonoBehaviour
     public GameObject bagPenel;
     public player player;//£¡£¡£¡ÍÏÈë
     public static bagManager instance;
-<<<<<<< HEAD
     public bag playerBag;
     private void Start()
     {
@@ -23,8 +22,6 @@ public class bagManager : MonoBehaviour
             }
         }
     }
-=======
->>>>>>> ç¨‹åºé»‘çŒ«çš„æ³ªç—£
     private void Awake()
     {
         if(instance!=null)
@@ -46,7 +43,6 @@ public class bagManager : MonoBehaviour
                 break;
             Destroy(instance.bagPenel.transform.GetChild(i).gameObject);
         }
-<<<<<<< HEAD
         //ºó¸üĞÂ
         for(int i=0;i<instance.playerBag.items.Count;i++)
         {
@@ -58,10 +54,4 @@ public class bagManager : MonoBehaviour
     {
         print("text");
     }
-=======
-        //
-    }
-
-
->>>>>>> ç¨‹åºé»‘çŒ«çš„æ³ªç—£
 }

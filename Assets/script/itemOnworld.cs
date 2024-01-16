@@ -22,15 +22,10 @@ public class itemOnworld : MonoBehaviour
     {
         if (collision.gameObject.tag == "player")
         {
-<<<<<<< HEAD
             AddItem();
             //µ÷ÓÃµÀ¾ßÓµÓĞµÄ×÷ÓÃº¯Êı
             eventsystem.Instance.EventInvoke(playerItem.name);
             playerItem.isGet = true;
-=======
-       
-            AddItem();
->>>>>>> ç¨‹åºé»‘çŒ«çš„æ³ªç—£
             Destroy(this.gameObject);
         }
     }
