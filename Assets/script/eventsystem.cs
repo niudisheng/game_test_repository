@@ -6,7 +6,7 @@ public class eventsystem : baseNomonoManager<eventsystem>
 {
     Dictionary<string, UnityAction> events = new Dictionary<string, UnityAction>();
     //添加事件的函数
-    public void setUp(string name,UnityAction action)
+    public void setUpOrAdd(string name,UnityAction action)
     {
         //判断是否存在该key
         if(events.ContainsKey(name))

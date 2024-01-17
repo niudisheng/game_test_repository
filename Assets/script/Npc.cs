@@ -16,8 +16,8 @@ public class Npc : MonoBehaviour, Imysigninterfence
 
     }
 
-    void Imysigninterfence.interaction()
+    public void interaction()
     {
-        
+        print("Npc");
     }
 }
