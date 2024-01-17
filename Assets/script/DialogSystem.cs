@@ -18,7 +18,7 @@ public class DialogSystem : MonoBehaviour
     List<string> text_list = new List<string>();
     void Start()
     {
-        
+        GetText(textLabel);
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class DialogSystem : MonoBehaviour
         text_list.Add(_name);
 
     }
-    public void GetText(string _name)
+    public void GetText(Text textLabel)
     {
         var row=textFile.text.Split("\n");
         Debug.Log(row[0]);
