@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ObstacleRemover
   - obstacle
+  - inteBox
+  - inteNpc
   layers:
   - Default
   - TransparentFX
@@ -42,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: player
+    uniqueID: 3349973777
+    locked: 0
+  - name: UI
+    uniqueID: 2366600573
     locked: 0

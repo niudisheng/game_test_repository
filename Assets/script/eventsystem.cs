@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 public class eventsystem : baseNomonoManager<eventsystem>
-{
+{   
     Dictionary<string, UnityAction> events = new Dictionary<string, UnityAction>();
     //添加事件的函数
     public void setUpOrAdd(string name,UnityAction action)

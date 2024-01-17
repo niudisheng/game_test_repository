@@ -6,7 +6,7 @@ using UnityEngine;
 public class bgController : MonoBehaviour
 {
     public GameObject StopMenu;
-   public float weiyi;
+    public float weiyi;
     public float speed;
     private Vector3 startPosition;
     private bool isOpen;

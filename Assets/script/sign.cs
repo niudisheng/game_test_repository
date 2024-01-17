@@ -34,10 +34,12 @@ public class sign : MonoBehaviour
         if (collision.gameObject.CompareTag("inteNpc") || collision.gameObject.CompareTag("inteBox"))
         {
             isSignActive = true;
+            Debug.Log("stay");
             if(Input.GetKeyDown(KeyCode.F))
             {
+                Debug.Log("F");
                 isSignActive = false;
-              collision.gameObject.GetComponent<Imysigninterfence>().interaction();
+                collision.gameObject.GetComponent<Imysigninterfence>().interaction();
             } 
         }
     }
