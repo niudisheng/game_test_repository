@@ -12,7 +12,7 @@ public class bagManager : MonoBehaviour
     private void Start()
     {
         //把道具函数初始化到事件中心
-        eventsystem.Instance.setUp("daojuming", text);//此string变量和道具名字应该相同
+        eventsystem.Instance.setUpOrAdd("daojuming", text);//此string变量和道具名字应该相同
         //使场景刷新后在前一个场景已经获取的道具生效
         for(int i=0;i<instance.playerBag.items.Count;i++)
         {
