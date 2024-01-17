@@ -18,7 +18,7 @@ public class eventsystem : baseNomonoManager<eventsystem>
             events.Add(name, action);
         }
     }
-    //调用的函数
+    //调用事件的函数
     public void EventInvoke(string name)
     {
         if(events.ContainsKey(name))
@@ -34,6 +34,7 @@ public class eventsystem : baseNomonoManager<eventsystem>
             events[name] -= action;
         }
     }
+    //删除某个键
     public void clearKey(string name)
     {
         if(events.ContainsKey(name))
@@ -41,6 +42,7 @@ public class eventsystem : baseNomonoManager<eventsystem>
             events.Remove(name);
         }
     }
+    //删除字典
     public void clearAll()
     {
         events.Clear();
