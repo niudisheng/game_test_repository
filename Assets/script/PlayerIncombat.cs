@@ -53,6 +53,7 @@ public class PlayerIncombat : MonoBehaviour
             }
             else if (playerTrans.position.y == roadMiddle || playerTrans.position.y == roadDown) //处于中间or下路，移动
             {
+                soundManager.jumpingSound();
                 playerTrans.DOMoveY(moveDistance, moveTime).SetRelative();
             }
             
@@ -65,6 +66,7 @@ public class PlayerIncombat : MonoBehaviour
             }
             else if (playerTrans.position.y == roadMiddle || playerTrans.position.y == roadUp) //处于中间or上路，移动
             {
+                soundManager.jumpingSound();
                 playerTrans.DOMoveY(-moveDistance, moveTime).SetRelative();
             }
         }
