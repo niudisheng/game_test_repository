@@ -23,9 +23,12 @@ public class Npc : MonoBehaviour, Imysigninterfence
 
     public void interaction()
     {
+        if (!is_talk) 
+        { 
         print("Npc");
         DialogSystem.awake_talk_ui(textFile);
         is_talk = true;
+        }
         
         
     }

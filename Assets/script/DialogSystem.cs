@@ -59,19 +59,18 @@ public class DialogSystem : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F))
         {           
-            return updateText();
+            return updateText();     
         }
-        return false;
+        return true;      //不按按键保持talk状态
     }
-    static public  bool updateText()
-    {   
-
-        Debug.Log("updateText");
-        if (instance.index < instance.max_index)
+    static public  bool updateText()   //更新输出文字
+    {          
+        if (instance.index < instance.max_index)   //文字内容没有播完
         {
             if (instance.text_finished)
             {
                 instance.index++;
+                Debug.Log($"instance.index:{instance.index}");
                 instance.text_display = instance.StartCoroutine(instance.setTextUI(instance.index)); 
                 instance.text_finished = false;
             }
