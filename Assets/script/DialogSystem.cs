@@ -53,13 +53,17 @@ public class DialogSystem : MonoBehaviour
         instance = this;
     }
     void Start()
-    {
+    {   
+        heroine.SetActive(false);
+        female_2.SetActive(false);
         talk_ui.SetActive(false);
         max_index = GetText(textFile)-1;
         index = -1;
     }
     static public void awake_talk_ui(TextAsset textFile)
     {
+        instance.heroine.SetActive(false);
+        instance.female_2.SetActive(false);
         instance.talk_ui.SetActive(false);
         instance.max_index = GetText(textFile) - 1;
         instance.index = -1;
@@ -88,23 +92,29 @@ public class DialogSystem : MonoBehaviour
     static public void image_update(string[] image_pos)
     {
         string sign = image_pos[0];
-        string pos = image_pos[1];
+        char pos = image_pos[1][0];
         GameObject ga = instance.GameObject_dic[sign];
         Transform tran = ga.transform;
-        Sprite sprite = ga.GetComponent<Sprite>();               
-        float x_coordinate= instance.middle;
-        if (pos == "m")
+        Sprite sprite = ga.GetComponent<Sprite>();
+        float x_coordinate=instance.middle;
+        //string m = "m1";
+        if (pos == 'm')
         {
+            
+            
             x_coordinate = instance.middle;
         }
-        else if (pos == "l")
+        else if (pos == 'l')
         {
             x_coordinate = instance.left;
         }
-        else if (pos == "r")
+        else 
         {
+            
             x_coordinate = instance.right;
         }
+        
+        //Debug.Log(x_coordinate);
         if (!ga.activeSelf)
         {
             ga.SetActive(true);
