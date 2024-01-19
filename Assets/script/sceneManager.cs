@@ -14,5 +14,15 @@ public class sceneManager : baseNomonoManager<sceneManager>
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
+    public void addScene(string sceneName)
+    {
+        Scene scene = SceneManager.GetSceneByName(sceneName);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(scene);
+    }
+    public void changeScene(string sceneName)
+    {       
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);        
+    }
     
 }
