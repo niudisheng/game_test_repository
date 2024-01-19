@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.UIElements;
 //using UnityEngine.UIElements;
 
 public class DialogSystem : MonoBehaviour
@@ -14,7 +15,7 @@ public class DialogSystem : MonoBehaviour
     public GameObject talk_ui;
     public Text textLabel;
     public Text name_text;
-    Image faceImage;
+    
     //TMPro.TextMeshPro textMeshPro;
 
     [Header("对话参数")]
@@ -24,20 +25,27 @@ public class DialogSystem : MonoBehaviour
     public float textSpeed = 0.1f;
 
     [Header("图片资源")]
-    public Sprite heroine;
-    public Sprite female_2;
-    Dictionary<string,Sprite>image_dic=new Dictionary<string, Sprite>();
+    public GameObject heroine;
+    public GameObject female_2;
+    Dictionary<string,GameObject> GameObject_dic = new Dictionary<string, GameObject>();
+    //Dictionary<string,Sprite>GameObject_dic=new Dictionary<string, Sprite>();
+    [Header("立绘移动参数")]
+    public float left=-1280;
+    public float middle=-950;
+    public float right=-575;
+    public float move_time =0.5f;
 
     List<string> name_list = new List<string>();
     List<string> text_list = new List<string>();
+    List<string[]> image_list = new List<string[]>();
     static public DialogSystem instance;
     bool text_finished = true;
     Coroutine text_display;
     private void Awake()   //单例的默认写法
     {   
-        image_dic.Clear();
-        image_dic["女主角"]=heroine;
-        image_dic["女二"]= female_2;
+        GameObject_dic.Clear();
+        GameObject_dic["女主角"]=heroine;
+        GameObject_dic["女二"]= female_2;
         if (instance != null)
         {
             Destroy(this);
@@ -65,7 +73,10 @@ public class DialogSystem : MonoBehaviour
     {
         if (!instance.talk_ui.activeSelf)
         {
+            string[] image_pos = instance.image_list[0];
             instance.talk_ui.SetActive(true);
+            image_update(image_pos);
+            
             return updateText();
         }
         if (Input.GetKeyDown(KeyCode.F))
@@ -74,15 +85,56 @@ public class DialogSystem : MonoBehaviour
         }
         return true;      //不按按键保持talk状态
     }
+    static public void image_update(string[] image_pos)
+    {
+        string sign = image_pos[0];
+        string pos = image_pos[1];
+        GameObject ga = instance.GameObject_dic[sign];
+        Transform tran = ga.transform;
+        Sprite sprite = ga.GetComponent<Sprite>();               
+        float x_coordinate= instance.middle;
+        if (pos == "m")
+        {
+            x_coordinate = instance.middle;
+        }
+        else if (pos == "l")
+        {
+            x_coordinate = instance.left;
+        }
+        else if (pos == "r")
+        {
+            x_coordinate = instance.right;
+        }
+        if (!ga.activeSelf)
+        {
+            ga.SetActive(true);
+            tran.position = new Vector3(x_coordinate, tran.position.y, tran.position.z);
+        }
+        if (tran.position.x != x_coordinate)
+        tran.DOMoveX(x_coordinate, instance.move_time);
+
+    }
+    static public void closeUi() 
+    {
+        foreach (GameObject value in instance.GameObject_dic.Values)
+        {
+            value.SetActive(false);
+        }
+        
+        instance.talk_ui.SetActive(false);
+    }
     static public  bool updateText()   //更新输出文字
     {          
         if (instance.index < instance.max_index)   //文字内容没有播完
-        {         
+        {   
+            
             if (instance.text_finished)
             {
                 instance.index++;
                 string content = instance.text_list[instance.index];
-                instance.name_text.text = instance.name_list[instance.index];                
+                instance.name_text.text = instance.name_list[instance.index];
+                string[] image_pos = instance.image_list[instance.index];
+                image_update(image_pos);
                 instance.text_display = instance.StartCoroutine(instance.setTextUI(content)); 
                 instance.text_finished = false;
             }
@@ -98,7 +150,8 @@ public class DialogSystem : MonoBehaviour
         }
         else
         {
-            instance.talk_ui.SetActive(false);
+
+            closeUi();
             return false;
         }
     }
@@ -107,14 +160,20 @@ public class DialogSystem : MonoBehaviour
         instance.text_list.Clear();
         var rows = textFile.text.Split('\n');
         foreach (var row in rows)
-        {
+        {   
             string text = row.ToString();
             string[] row_list = text.Split(',');
-            //string sign = row_list[0];
+            string sign = row_list[0];
+            if (sign == "立绘标志")
+            {
+                continue;
+            }
+            string position = row_list[4];
             string name = row_list[2];
             string content = row_list[3];
             instance.name_list.Add(name);
             instance.text_list.Add(content);
+            instance.image_list.Add(new string[2] {sign,position});
         }
         return instance.text_list.Count;
     }
@@ -128,5 +187,7 @@ public class DialogSystem : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
         text_finished=true;
+        //StopCoroutine(text_display);
+
     }
 }
