@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.UIElements;
-//using UnityEngine.UIElements;
 
 public class DialogSystem : MonoBehaviour
 {
@@ -30,11 +29,12 @@ public class DialogSystem : MonoBehaviour
     Dictionary<string,GameObject> GameObject_dic = new Dictionary<string, GameObject>();
     //Dictionary<string,Sprite>GameObject_dic=new Dictionary<string, Sprite>();
     [Header("立绘移动参数")]
-    public float left=-1280;
-    public float middle=-950;
-    public float right=-575;
+    private float left=-2500;
+    private float middle=-1000;
+    private float right=500;
     public float move_time =0.5f;
 
+    public int sceneNum = 1;
     List<string> name_list = new List<string>();
     List<string> text_list = new List<string>();
     List<string[]> image_list = new List<string[]>();
@@ -44,7 +44,7 @@ public class DialogSystem : MonoBehaviour
     private void Awake()   //单例的默认写法
     {   
         GameObject_dic.Clear();
-        GameObject_dic["女主角"]=heroine;
+        GameObject_dic["女主"]=heroine;
         GameObject_dic["女二"]= female_2;
         if (instance != null)
         {
@@ -65,6 +65,7 @@ public class DialogSystem : MonoBehaviour
         instance.heroine.SetActive(false);
         instance.female_2.SetActive(false);
         instance.talk_ui.SetActive(false);
+        
         instance.max_index = GetText(textFile) - 1;
         instance.index = -1;
     }
@@ -93,6 +94,10 @@ public class DialogSystem : MonoBehaviour
     {
         string sign = image_pos[0];
         char pos = image_pos[1][0];
+        if (sign == "取消") 
+        {
+            return;
+        }
         GameObject ga = instance.GameObject_dic[sign];
         Transform tran = ga.transform;
         Sprite sprite = ga.GetComponent<Sprite>();
@@ -100,8 +105,6 @@ public class DialogSystem : MonoBehaviour
         //string m = "m1";
         if (pos == 'm')
         {
-            
-            
             x_coordinate = instance.middle;
         }
         else if (pos == 'l')
@@ -110,18 +113,16 @@ public class DialogSystem : MonoBehaviour
         }
         else 
         {
-            
             x_coordinate = instance.right;
         }
-        
-        //Debug.Log(x_coordinate);
+        Debug.Log(x_coordinate);
         if (!ga.activeSelf)
         {
             ga.SetActive(true);
-            tran.position = new Vector3(x_coordinate, tran.position.y, tran.position.z);
+            tran.localPosition = new Vector3(x_coordinate, tran.localPosition.y, tran.localPosition.z);
         }
-        if (tran.position.x != x_coordinate)
-        tran.DOMoveX(x_coordinate, instance.move_time);
+        if (tran.localPosition.x != x_coordinate)
+        tran.DOLocalMoveX(x_coordinate, instance.move_time);
 
     }
     static public void closeUi() 
@@ -139,9 +140,16 @@ public class DialogSystem : MonoBehaviour
         {   
             
             if (instance.text_finished)
-            {
+            {   
+
                 instance.index++;
                 string content = instance.text_list[instance.index];
+                if (content == "跳转")
+                {   
+                    closeUi();
+                    sceneManager.changeScene(instance.sceneNum);
+                }
+
                 instance.name_text.text = instance.name_list[instance.index];
                 string[] image_pos = instance.image_list[instance.index];
                 image_update(image_pos);
@@ -178,6 +186,7 @@ public class DialogSystem : MonoBehaviour
             {
                 continue;
             }
+            
             string position = row_list[4];
             string name = row_list[2];
             string content = row_list[3];

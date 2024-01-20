@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class sceneManager : baseNomonoManager<sceneManager>
 {
     //转换关卡的函数
-    public void changeScene(int sceneNum)
+    static public void changeScene(int sceneNum)
     {
         SceneManager.LoadScene(sceneNum);
     }
@@ -25,4 +25,6 @@ public class sceneManager : baseNomonoManager<sceneManager>
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);        
     }
     
+    
+
 }
