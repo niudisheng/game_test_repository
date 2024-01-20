@@ -16,11 +16,15 @@ public class bagManager : MonoBehaviour
     public Text itemName;
     public Text RollTime;
     public item thisItem;
-
+    public GameObject reComfine;
     private void Start()
     {
        
        
+    }
+    private void Update()
+    {
+
     }
     private void Awake()
     {
@@ -63,5 +67,17 @@ public  void refreshItemOnBag()//外部使用道具，则转到bag里，同时改isGet
         instance.describe.text = instance.thisItem.describe.ToString();
         instance.itemName.text = instance.thisItem.Name.ToString();
         instance.RollTime.text = instance.thisItem.RollTime.ToString();
+    }
+    public static void IsChooseTweItem()
+    {
+        if (instance.playerBag.items.Count <2)
+        {
+            instance.reComfine.SetActive(true);
+        }
+        else
+        {
+            instance.gameObject.SetActive(false);
+        }
+
     }
 }
