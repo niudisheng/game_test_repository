@@ -21,7 +21,7 @@ public class box : MonoBehaviour,Imysigninterfence
             playerBag.items.Add(InvincibleItem);//添加到背包
             InvincibleItem.isGet = true;
             eventsystem.Instance.EventInvoke("Invincible");
-            sceneManager.Instance.nextScene();
+            //sceneManager.Instance.nextScene();
             InvincibleItem.numItem++;
             //ItemManager.creatNewItem(thisItem);
         }
@@ -36,7 +36,7 @@ public class box : MonoBehaviour,Imysigninterfence
             playerBag.items.Add(wandItem);//添加到背包
             wandItem.isGet = true;
             eventsystem.Instance.EventInvoke("wand");
-            sceneManager.Instance.nextScene();
+            //sceneManager.Instance.nextScene();
             wandItem.numItem++;
             //ItemManager.creatNewItem(thisItem);
         }
@@ -51,7 +51,7 @@ public class box : MonoBehaviour,Imysigninterfence
             playerBag.items.Add(reBoundItem);//添加到背包
             reBoundItem.isGet = true;
             eventsystem.Instance.EventInvoke("reBoundItem");
-            sceneManager.Instance.nextScene();
+            //sceneManager.Instance.nextScene();
             reBoundItem.numItem++;
             //ItemManager.creatNewItem(thisItem);
         }
