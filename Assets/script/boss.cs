@@ -20,7 +20,7 @@ public class boss : MonoBehaviour
     void Update()
     {
         ObstacRefresh();
-        print(randomNum);
+        //print(randomNum);
         
         
     }
