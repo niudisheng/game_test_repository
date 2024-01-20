@@ -9,6 +9,7 @@ public class PlayerIncombat : MonoBehaviour
 {
     public Transform playerTrans;
     private BoxCollider2D playerCollider;
+    private Animator playerAnim;
 
 
     public int maxHealth;                //设置最大生命值
@@ -32,6 +33,7 @@ public class PlayerIncombat : MonoBehaviour
     {
         health = maxHealth;              //初始化生命值
         playerCollider = GetComponent<BoxCollider2D>();
+        playerAnim = GetComponent<Animator>();
         isInvincible = false;
         isCD = false;
     }
@@ -41,6 +43,7 @@ public class PlayerIncombat : MonoBehaviour
     {
         Move();
         Skill();
+
     }
 
     void Move()
@@ -68,7 +71,16 @@ public class PlayerIncombat : MonoBehaviour
                 playerTrans.DOMoveY(-moveDistance, moveTime).SetRelative();
             }
         }
+        if (playerTrans.position.y == roadDown || playerTrans.position.y == roadUp || playerTrans.position.y == roadMiddle)
+        {
+            playerAnim.SetBool("Move", false);
+        }
+        else
+        {
+            playerAnim.SetBool("Move", true);
+        }
     }
+
 
     void Skill()
     {
@@ -100,12 +112,16 @@ public class PlayerIncombat : MonoBehaviour
             Debug.Log("die");
         }
         isInvincible = true;             //无敌状态开启
+        playerAnim.SetBool("Hurt", true);
         StartCoroutine(WaitInvincible());//开启协程处理无敌时间
     }
 
     IEnumerator WaitInvincible()
     {
+        
         yield return new WaitForSeconds(invincibleTime);
+        Debug.Log("000");
+        playerAnim.SetBool("Hurt", false);
         isInvincible = false;
     }
 
