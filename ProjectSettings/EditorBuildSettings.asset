@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/externalCheckPoint 1.unity
+    path: Assets/Scenes/story1.unity
     guid: a7ffc5b722ae6784da1dd395427c9f51
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
