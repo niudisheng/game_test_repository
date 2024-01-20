@@ -14,8 +14,6 @@ public class DialogSystem : MonoBehaviour
     public GameObject talk_ui;
     public Text textLabel;
     public Text name_text;
-    
-    //TMPro.TextMeshPro textMeshPro;
 
     [Header("对话参数")]
     public TextAsset textFile;  //对话文件
@@ -27,14 +25,15 @@ public class DialogSystem : MonoBehaviour
     public GameObject heroine;
     public GameObject female_2;
     Dictionary<string,GameObject> GameObject_dic = new Dictionary<string, GameObject>();
-    //Dictionary<string,Sprite>GameObject_dic=new Dictionary<string, Sprite>();
+
     [Header("立绘移动参数")]
     private float left=-2500;
     private float middle=-1000;
     private float right=500;
     public float move_time =0.5f;
 
-    public int sceneNum = 1;
+    [Header("移动到哪个场景")]
+    public int sceneNum ;
     List<string> name_list = new List<string>();
     List<string> text_list = new List<string>();
     List<string[]> image_list = new List<string[]>();
@@ -119,7 +118,8 @@ public class DialogSystem : MonoBehaviour
         if (!ga.activeSelf)
         {
             ga.SetActive(true);
-            tran.localPosition = new Vector3(x_coordinate, tran.localPosition.y, tran.localPosition.z);
+            //tran.localPosition = new Vector3(x_coordinate, tran.localPosition.y, tran.localPosition.z);
+            tran.localPosition = new Vector3(x_coordinate, 1500, tran.localPosition.z);
         }
         if (tran.localPosition.x != x_coordinate)
         tran.DOLocalMoveX(x_coordinate, instance.move_time);
@@ -131,7 +131,7 @@ public class DialogSystem : MonoBehaviour
         {
             value.SetActive(false);
         }
-        
+        Debug.Log("closeUi");
         instance.talk_ui.SetActive(false);
     }
     static public  bool updateText()   //更新输出文字
