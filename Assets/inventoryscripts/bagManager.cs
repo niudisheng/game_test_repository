@@ -2,13 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class bagManager : MonoBehaviour
 {
     public GameObject bagPenel;
+    public GameObject clearOutTime;
     public PlayerIncombat PlayerIncombat;//！！！拖入
     public static bagManager instance;
     public bag playerBag;
+    public Text ItemCd;//几个道具信息
+    public Text describe;
+    public Text itemName;
+    public Text RollTime;
+    public item thisItem;
+
     private void Start()
     {
        
@@ -26,20 +34,34 @@ public class bagManager : MonoBehaviour
     {
 
     }  
-public static void refreshItem()
+    public void clearAllItemOnBag()//清除背包里的所有道具
     {
-        //先删除
-        for(int i=0;i<instance.bagPenel.transform.childCount;i++)
+        for (int i = 0; i < playerBag.items.Count; i++)
         {
-            if (instance.bagPenel.transform.childCount == 0)
-                break;
-            Destroy(instance.bagPenel.transform.GetChild(i).gameObject);
+            playerBag.items[i].isGet = false;
         }
-        //后更新
-        for(int i=0;i<instance.playerBag.items.Count;i++)
-        {
-            //更新每个bag里道具的数据到UI里（数目，描述，）
-        }
+        playerBag.items.Clear();
     }
-
+public  void refreshItemOnBag()//外部使用道具，则转到bag里，同时改isGet
+    {
+        if (playerBag.items.Count <2)
+        {
+            playerBag.items.Add(thisItem);
+            thisItem.isGet = true;
+        }
+        else
+        {
+            clearOutTime.SetActive(true);
+        }
+        
+    }
+    public static void getItem(item thisItem)
+    {
+        instance.thisItem = thisItem;
+          //更新信息到信息栏
+        instance.ItemCd.text =instance.thisItem.Cd.ToString();
+        instance.describe.text = instance.thisItem.describe.ToString();
+        instance.itemName.text = instance.thisItem.Name.ToString();
+        instance.RollTime.text = instance.thisItem.RollTime.ToString();
+    }
 }

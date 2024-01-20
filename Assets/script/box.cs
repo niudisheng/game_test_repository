@@ -60,7 +60,7 @@ public class box : MonoBehaviour,Imysigninterfence
             reBoundItem.numItem++;
             reBoundItem.isGet = true;
         }
-        bagManager.refreshItem();//把bag里的数据更新到UI里
+       /* bagManager.refreshItem();*///把bag里的数据更新到UI里
         gameObject.tag = "Untagged";
         isOpen = false;
     }
