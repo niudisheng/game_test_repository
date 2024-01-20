@@ -9,6 +9,9 @@ public class boss : MonoBehaviour
     public float refreshTime;//间隔多久刷新障碍物
     private float startRefreashTime;
     private int randomNum;
+    public int BossHealth;//boss生命
+    public obstacle obstacleReBound;
+    public MagicBall MagicBall;
     //private int lastRandomNum;
     // Start is called before the first frame update
     void Start()
@@ -20,18 +23,44 @@ public class boss : MonoBehaviour
     void Update()
     {
         ObstacRefresh();
-        //print(randomNum);
-        
+        print(randomNum);
+        if (BossHealth < 0)
+        {
+            print("boss死亡");
+        }
         
     }
     void ObstacRefresh()
     {
-        randomNum = Random.Range(1,4);
+        randomNum = Random.Range(1, 8);//生成1，2，3，4，5，6，7
         refreshTime -= Time.deltaTime;
         if (refreshTime <= 0 )
         {
-            Instantiate(Obstacle, transform.GetChild(randomNum - 1).transform.position, Quaternion.identity);
+            if(randomNum<=2&&randomNum>=1)//第一行
+            {
+               Instantiate(Obstacle, transform.GetChild(0).transform.position, Quaternion.identity);
+            }
+            
+            if (randomNum <= 5 && randomNum >= 3)//第二行
+            {
+               Instantiate(Obstacle, transform.GetChild(1).transform.position, Quaternion.identity);
+            }
+             if (randomNum >= 6 && randomNum <= 7)//第三行  
+            {
+                Instantiate(Obstacle, transform.GetChild(2).transform.position, Quaternion.identity);
+            }
             refreshTime = startRefreashTime;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("obstacle"))
+        {
+            BossHealth -= obstacleReBound.damageToBoss;
+        }
+        if (collision.gameObject.CompareTag("magicBall"))
+        {
+            BossHealth -= MagicBall.BallDamage;
         }
     }
 }

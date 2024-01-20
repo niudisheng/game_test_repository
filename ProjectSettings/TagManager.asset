@@ -8,6 +8,8 @@ TagManager:
   - obstacle
   - inteBox
   - inteNpc
+  - magicBalll
+  - boss
   layers:
   - Default
   - TransparentFX
