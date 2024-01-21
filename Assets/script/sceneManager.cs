@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class sceneManager : baseNomonoManager<sceneManager>
-{
+{   
     //转换关卡的函数
      public void changeScene(int sceneNum)
-    {
+    {   
+
         SceneManager.LoadScene(sceneNum,LoadSceneMode.Single);
+        soundManager.stopMusic();
     }
     public void reTry()//重开
     {
@@ -22,7 +24,8 @@ public class sceneManager : baseNomonoManager<sceneManager>
     }
     public void changeScene(string sceneName)
     {       
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);        
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        soundManager.stopMusic();
     }
     
     
