@@ -65,6 +65,12 @@ public class PlayerIncombat : MonoBehaviour
     public bool CanReBound;
     public bool haveShortBlade;
     public bool haveFinalJudgement;
+
+    private bool isUseShield;
+    private bool isUseWand;
+    private bool isUseReBound;
+    private bool isUseShortBlade;
+    private bool isUseFinalJudgement;
     // Start is called before the first frame update
     void Start()
     {
@@ -121,11 +127,16 @@ public class PlayerIncombat : MonoBehaviour
     private void OnEnable()
     {
         //先把道具函数初始化到事件中心
-        eventsystem.Instance.setUpOrAdd("shield", PlayerShield);//此string变量和道具名字应该相同
-        eventsystem.Instance.setUpOrAdd("wand", PlayerWand);
-        eventsystem.Instance.setUpOrAdd("ReBound", playerReBound);
-        eventsystem.Instance.setUpOrAdd("shortBlade", PlayerShortBlade);
-        eventsystem.Instance.setUpOrAdd("FinalJudgement", PlayerFinalJudgement);
+        eventsystem.Instance.setUpOrAdd("盾牌", PlayerShield);//此string变量和道具名字应该相同
+        eventsystem.Instance.setUpOrAdd("魔力法杖", PlayerWand);
+        eventsystem.Instance.setUpOrAdd("反弹护盾", playerReBound);
+        eventsystem.Instance.setUpOrAdd(" 不休短刃", PlayerShortBlade);
+        eventsystem.Instance.setUpOrAdd("终焉圣裁", PlayerFinalJudgement);
+        eventsystem.Instance.setUpOrAdd("玩家使用盾牌", PlayerIsUseShield);//此string变量和道具名字应该相同
+        eventsystem.Instance.setUpOrAdd("玩家使用魔力法杖", PlayerIsUseWand);
+        eventsystem.Instance.setUpOrAdd("玩家使用反弹护盾", playerIsUseReBound);
+        eventsystem.Instance.setUpOrAdd(" 玩家使用不休短刃", PlayerIsUseShortBlade);
+        eventsystem.Instance.setUpOrAdd("玩家使用终焉圣裁", PlayerIsUseFinalJudgement);
         //使场景刷新后在前一个场景已经获取的道具生效
         for (int i = 0; i < playerBag.items.Count; i++)
         {
@@ -217,7 +228,7 @@ public class PlayerIncombat : MonoBehaviour
         InvincibleCd -= Time.deltaTime;
         if (haveShield && InvincibleCd<=0)//判断是否可以解锁无敌
         {
-            if (Input.GetKeyDown(KeyCode.K))
+            if (isUseShield)
             {
                 invincibleTime = skillInvincibleTime;//无敌状态开启   
                 InvincibleCd = InvincibleStartCd;
@@ -230,7 +241,7 @@ public class PlayerIncombat : MonoBehaviour
         reBoundCd -= Time.deltaTime;
         if (CanReBound && reBoundCd <= 0)//判断是否可以解锁无敌
         {
-            if (Input.GetKeyDown(KeyCode.L))
+            if (isUseReBound)
             {
                 print("成功开启技能");
                 reBoundColli.enabled = true;
@@ -246,7 +257,7 @@ public class PlayerIncombat : MonoBehaviour
         wandCd -= Time.deltaTime;
         if (haveWand && wandCd <= 0)//判断是否可以解锁无敌
         {
-            if (Input.GetKeyDown(KeyCode.P))
+            if (isUseWand)
             {
                 print("成功开启wind技能");
                 wandCd = startWandCd;
@@ -274,7 +285,7 @@ public class PlayerIncombat : MonoBehaviour
         shortBladeCd-= Time.deltaTime;
         if (haveShortBlade && shortBladeCd <= 0)//判断是否可以解锁无敌
         {
-            if (Input.GetKeyDown(KeyCode.O))
+            if (isUseShortBlade)
             {
                 print("成功开启shortBlade技能");
                 shortBladeColli.enabled = true;
@@ -296,7 +307,7 @@ public class PlayerIncombat : MonoBehaviour
         finalJudgementCd-= Time.deltaTime;
         if (haveFinalJudgement && finalJudgementCd<= 0)//判断是否可以解锁无敌
         {
-            if (Input.GetKeyDown(KeyCode.I))
+            if (isUseFinalJudgement)
             {
                 print("成功开启FinalJudgement技能");
                 
@@ -340,5 +351,26 @@ public class PlayerIncombat : MonoBehaviour
     void PlayerFinalJudgement()
     {
         haveFinalJudgement = true;
+    }
+    //按键Bool值的同步
+    void PlayerIsUseShield()//玩家无敌
+    {
+        isUseShield = true;
+    }
+    void PlayerIsUseWand()//玩家的法杖
+    {
+       isUseWand = true;
+    }
+    void playerIsUseReBound()//玩家反弹道具
+    {
+        isUseReBound = true;
+    }
+    void PlayerIsUseShortBlade()
+    {
+        isUseShortBlade = true;
+    }
+    void PlayerIsUseFinalJudgement()
+    {
+        isUseFinalJudgement = true;
     }
 }

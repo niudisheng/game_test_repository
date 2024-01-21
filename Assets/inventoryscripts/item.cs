@@ -5,9 +5,12 @@ using UnityEngine;
 public class item : ScriptableObject
 {
     //道具描述？
+    public Sprite ItemSprite;
     public string Name;
    public string describe;
     //道具数目
     public int numItem;
    public bool isGet;//判断此道具是否被获取
+    public float Cd;
+    public string RollTime;//后摇
 }

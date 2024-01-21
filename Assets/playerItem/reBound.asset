@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e08f6c5f1906994fa8aee1b40b1b33d, type: 3}
   m_Name: reBound
   m_EditorClassIdentifier: 
-  Name: ReBound
-  describe: "\u4F7F\u7528\u540E\u53CD\u5F39boss\u7684\u653B\u51FB\uFF0C\u4F7F\u969C\u788D\u7269\u539F\u8DEF\u8FD4\u56DE\u5BF9boss\u9020\u6210\u4F24\u5BB3"
+  Name: "\u53CD\u5F39\u62A4\u76FE"
+  describe: "\u4F7F\u7528\u540E\u53CD\u5F39boss\u7684\u653B\u51FB3\u79D2\uFF0C\u4F7F\u969C\u788D\u7269\u539F\u8DEF\u8FD4\u56DE\u5BF9boss\u9020\u6210\u4F24\u5BB3\uFF0C\u5E76\u65E0\u654C\u76F8\u540C\u65F6\u95F4"
   numItem: 0
   isGet: 0
+  Cd: 10
+  RollTime: "\u65E0\u540E\u6447"

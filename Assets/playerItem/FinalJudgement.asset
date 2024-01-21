@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e08f6c5f1906994fa8aee1b40b1b33d, type: 3}
   m_Name: FinalJudgement
   m_EditorClassIdentifier: 
-  Name: FinalJudgement
-  describe: "\u4E00\u6B21\u9020\u6210100\u4F24\u5BB3\uFF0C\u524D\u540E\u6447\u65F6\u73A9\u5BB6\u8FDB\u5165\u65E0\u654C\uFF0C\u524D\u64470.5\u79D2\uFF0C\u540E\u64470.5\u79D2"
+  Name: "\u7EC8\u7109\u5723\u88C1"
+  describe: "\u4F7F\u7528\u540E\u53EC\u5524\u96F7\u9706\uFF0C\u5728boss\u5904\u5BF9\u5176\u9020\u6210100\u70B9\u4F24\u5BB3"
   numItem: 0
   isGet: 0
+  Cd: 25
+  RollTime: "\u524D\u64470.5\u79D2\uFF0C\u540E\u64470.5\u79D2"
