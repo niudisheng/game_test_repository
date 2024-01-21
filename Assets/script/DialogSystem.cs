@@ -147,7 +147,7 @@ public class DialogSystem : MonoBehaviour
                 if (content == "Ìø×ª")
                 {   
                     closeUi();
-                    sceneManager.changeScene(instance.sceneNum);
+                    sceneManager.Instance.changeScene(instance.sceneNum);
                 }
 
                 instance.name_text.text = instance.name_list[instance.index];

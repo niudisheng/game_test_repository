@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemSprite: {fileID: 21300000, guid: d2a34e246c34c824fbb0fd4014065bae, type: 3}
   Name: "\u76FE\u724C"
   describe: "\u4F7F\u7528\u540E\u4F7F\u73A9\u5BB6\u8FDB\u5165\u65E0\u654C\u65F6\u95F43\u79D2"
-  numItem: 1
+  numItem: 0
   isGet: 0
   Cd: 15
   RollTime: "\u65E0\u540E\u6447"

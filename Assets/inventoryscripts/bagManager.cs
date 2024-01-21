@@ -17,6 +17,7 @@ public class bagManager : MonoBehaviour
     public Text RollTime;
     public item thisItem;
     public GameObject reComfine;
+    public GameObject[] comfine = new GameObject[2];
     private void Start()
     {
        
@@ -24,7 +25,16 @@ public class bagManager : MonoBehaviour
     }
     private void Update()
     {
-
+        if (playerBag.items.Count >= 2)
+        {
+            comfine[0].SetActive(false);
+            comfine[1].SetActive(true);
+        }
+        else
+        {
+            comfine[0].SetActive(true);
+            comfine[1].SetActive(false);
+        }
     }
     private void Awake()
     {
@@ -71,14 +81,18 @@ public class bagManager : MonoBehaviour
     }
     public static void IsChooseTweItem()
     {
-        if (instance.playerBag.items.Count <2)
+        if (instance.playerBag.items.Count < 2)
         {
             instance.reComfine.SetActive(true);
         }
         else
         {
             instance.gameObject.SetActive(false);
+            sceneManager.Instance.changeScene(5);
         }
-
+    }
+    public void ToEndlessScene()
+    {
+        sceneManager.Instance.changeScene(5);
     }
 }
