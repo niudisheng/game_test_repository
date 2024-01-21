@@ -46,12 +46,13 @@ public class bagManager : MonoBehaviour
         }
         playerBag.items.Clear();
     }
-public  void refreshItemOnBag()//外部使用道具，则转到bag里，同时改isGet
+    public  void refreshItemOnBag()//外部使用道具，则转到bag里，同时改isGet
     {
         if (playerBag.items.Count <2)
         {
             playerBag.items.Add(thisItem);
             thisItem.isGet = true;
+            KeepData.SelectEquipment(thisItem);
         }
         else
         {
