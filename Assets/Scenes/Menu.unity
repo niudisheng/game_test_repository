@@ -174,7 +174,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: dcebae0c8865e3241b6b19611c71016a, type: 3}
   - name: story1
     clip: {fileID: 0}
-  sfxSounds: []
+  sfxSounds:
+  - name: arrow
+    clip: {fileID: 8300000, guid: abbd16c895cbf014ca3758368c9ae43f, type: 3}
+  - name: jump
+    clip: {fileID: 8300000, guid: 750548f93b276f642b1f37757668a688, type: 3}
   musicSource: {fileID: 542346047}
   sfxSource: {fileID: 790116980}
 --- !u!1 &542346045
@@ -317,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1493305176486695117, guid: acc7d74fc260fcf4c91dab89c693dfb9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3191643849160674373, guid: acc7d74fc260fcf4c91dab89c693dfb9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -396,6 +404,10 @@ PrefabInstance:
     - target: {fileID: 3191643849160674373, guid: acc7d74fc260fcf4c91dab89c693dfb9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381290471481374788, guid: acc7d74fc260fcf4c91dab89c693dfb9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3724456385708811111, guid: acc7d74fc260fcf4c91dab89c693dfb9, type: 3}
       propertyPath: m_IsActive

@@ -190,7 +190,8 @@ public class PlayerIncombat : MonoBehaviour
             else if ((playerTrans.position.y == roadMiddle || playerTrans.position.y == roadDown )&&RollBackTime<=0) //处于中间or下路，移动
             {
                 playerTrans.DOMoveY(moveDistance, moveTime).SetRelative();
-                soundManager.jumpingSound();
+                soundManager.Instance.playSFX("jump");
+                //soundManager.jumpingSound();
             }
             
         }
@@ -203,7 +204,8 @@ public class PlayerIncombat : MonoBehaviour
             else if ((playerTrans.position.y == roadMiddle || playerTrans.position.y == roadUp) && RollBackTime <= 0) //处于中间or上路，移动
             {
                 playerTrans.DOMoveY(-moveDistance, moveTime).SetRelative();
-                soundManager.jumpingSound();
+                soundManager.Instance.playSFX("jump");
+                //soundManager.jumpingSound();
             }
         }
     }

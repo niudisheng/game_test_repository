@@ -13,7 +13,7 @@ public class soundManager : MonoBehaviour
     public Sound[] musicSound, sfxSounds;
     public AudioSource musicSource, sfxSource;
 
-    public void playSound(string name)
+    public void playMusic(string name)
     {
         Sound s = Array.Find(musicSound,x=>x.name==name);
         if (s == null)
@@ -26,6 +26,18 @@ public class soundManager : MonoBehaviour
             musicSource.Play();
         }
     }
+    public void playSFX(string name)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+        if (s == null)
+        {
+            Debug.Log("Not found");
+        }
+        else
+        {
+            sfxSource.PlayOneShot(s.clip);
+        }
+    }
 
     private void Awake()
     {
@@ -35,18 +47,6 @@ public class soundManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(this);
-    }
-    private void Start()
-    {
-        playSound("theme");
-        audioManager = GetComponent<AudioSource>();
-        //在下面从Resources加载各种AudioClip
-        //jumpSound = Resources.Load<AudioClip>("sound/Saint5");
-    }
-    //在下面写不同音效的不同函数
-    static public void jumpingSound()
-    {
-       // Instance.audioManager.PlayOneShot(Instance.jumpSound);
     }
     static public void stopMusic()
     {
