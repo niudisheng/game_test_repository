@@ -41,12 +41,12 @@ public class soundManager : MonoBehaviour
         playSound("theme");
         audioManager = GetComponent<AudioSource>();
         //在下面从Resources加载各种AudioClip
-        jumpSound = Resources.Load<AudioClip>("sound/Saint5");
+        //jumpSound = Resources.Load<AudioClip>("sound/Saint5");
     }
     //在下面写不同音效的不同函数
     static public void jumpingSound()
     {
-        Instance.audioManager.PlayOneShot(Instance.jumpSound);
+       // Instance.audioManager.PlayOneShot(Instance.jumpSound);
     }
     static public void stopMusic()
     {
