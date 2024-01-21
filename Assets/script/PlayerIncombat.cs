@@ -51,8 +51,8 @@ public class PlayerIncombat : MonoBehaviour
     public float reBoundTime;//反弹持续时间
     public float ShortBladeTime;//短刃效果持续时间
 
-    public Image skillCD;
-    public float CDtime;
+    public Image skillCD_One;
+    public Image skillCD_Two;
 
     public int judgementDamage;//制裁技能伤害
 
@@ -98,7 +98,8 @@ public class PlayerIncombat : MonoBehaviour
     void Update()
     {
         Move();
-        Skill();
+        SkillOne();
+        SkillTwo();
         CanInvincble();//无敌函数
         TurnColor();
          invincibleTime -= Time.deltaTime;//无敌时间减少，由无敌时间判断是否无敌
@@ -130,12 +131,12 @@ public class PlayerIncombat : MonoBehaviour
         eventsystem.Instance.setUpOrAdd("盾牌", PlayerShield);//此string变量和道具名字应该相同
         eventsystem.Instance.setUpOrAdd("魔力法杖", PlayerWand);
         eventsystem.Instance.setUpOrAdd("反弹护盾", playerReBound);
-        eventsystem.Instance.setUpOrAdd(" 不休短刃", PlayerShortBlade);
+        eventsystem.Instance.setUpOrAdd("不休短刃", PlayerShortBlade);
         eventsystem.Instance.setUpOrAdd("终焉圣裁", PlayerFinalJudgement);
         eventsystem.Instance.setUpOrAdd("玩家使用盾牌", PlayerIsUseShield);//此string变量和道具名字应该相同
         eventsystem.Instance.setUpOrAdd("玩家使用魔力法杖", PlayerIsUseWand);
         eventsystem.Instance.setUpOrAdd("玩家使用反弹护盾", playerIsUseReBound);
-        eventsystem.Instance.setUpOrAdd(" 玩家使用不休短刃", PlayerIsUseShortBlade);
+        eventsystem.Instance.setUpOrAdd("玩家使用不休短刃", PlayerIsUseShortBlade);
         eventsystem.Instance.setUpOrAdd("玩家使用终焉圣裁", PlayerIsUseFinalJudgement);
         //使场景刷新后在前一个场景已经获取的道具生效
         for (int i = 0; i < playerBag.items.Count; i++)
@@ -179,22 +180,47 @@ public class PlayerIncombat : MonoBehaviour
         }
     }
 
-    void Skill()
+    void SkillOne()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (playerBag.items.Count >= 1)
         {
-            
-            if (skillCD.fillAmount == 0f)        //技能处于就绪状态
+            if (Input.GetKeyDown(KeyCode.J))
             {
-                
-                skillCD.fillAmount = 1f;
-                isCD = true;
+
+                if (skillCD_One.fillAmount == 0f)        //技能处于就绪状态
+                {
+                    skillCD_One.fillAmount = 1f;
+                    isCD = true;
+                }
+            }
+            if (isCD)                                //技能处于冷却状态
+            {
+                skillCD_One.fillAmount -= 1f / playerBag.items[0].Cd * Time.deltaTime;
             }
         }
-        if (isCD)                                //技能处于冷却状态
+            
+    }
+
+    void SkillTwo()
+    {
+        if (playerBag.items.Count >= 2)
         {
-            skillCD.fillAmount -= 1f / CDtime * Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+
+                if (skillCD_Two.fillAmount == 0f)        //技能处于就绪状态
+                {
+
+                    skillCD_Two.fillAmount = 1f;
+                    isCD = true;
+                }
+            }
+            if (isCD)                                //技能处于冷却状态
+            {
+                skillCD_Two.fillAmount -= 1f / playerBag.items[1].Cd * Time.deltaTime;
+            }
         }
+            
     }
 
     public void TakeDamage (int damage)  //角色受伤

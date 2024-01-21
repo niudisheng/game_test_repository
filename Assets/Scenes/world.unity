@@ -1043,8 +1043,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1973860719}
     m_Modifications:
     - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_LocalPosition.z
       value: -61
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1312862240822584765, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_Pivot.x
@@ -1129,6 +1141,14 @@ PrefabInstance:
     - target: {fileID: 3119474807196724224, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_Name
       value: ItembackGround (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263313700127384376, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c70c82a4f9dafb84b90f9ffff3b59504, type: 3}
+    - target: {fileID: 5263313700127384376, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7888855699722720652, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: ThisItem
@@ -1763,8 +1783,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1973860719}
     m_Modifications:
     - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_LocalPosition.z
       value: -59
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1312862240822584765, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_Pivot.x
@@ -1849,6 +1881,14 @@ PrefabInstance:
     - target: {fileID: 3119474807196724224, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_Name
       value: ItembackGround (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263313700127384376, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5504750570a039d4ea0aa9080c5b47e0, type: 3}
+    - target: {fileID: 5263313700127384376, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7888855699722720652, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: ThisItem
@@ -2441,8 +2481,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1973860719}
     m_Modifications:
     - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_LocalPosition.z
       value: -38.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1312862240822584765, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_Pivot.x
@@ -2527,6 +2579,14 @@ PrefabInstance:
     - target: {fileID: 3119474807196724224, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_Name
       value: ItembackGround (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263313700127384376, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 62355d7a1bb42614598b77181ed2092c, type: 3}
+    - target: {fileID: 5263313700127384376, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7888855699722720652, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: ThisItem
@@ -4996,8 +5056,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1973860719}
     m_Modifications:
     - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_LocalPosition.z
       value: -57
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1312862240822584765, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_Pivot.x
@@ -5082,6 +5154,14 @@ PrefabInstance:
     - target: {fileID: 3119474807196724224, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_Name
       value: ItembackGround (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263313700127384376, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fea3014c995ad864fa3e9366d47bd2b4, type: 3}
+    - target: {fileID: 5263313700127384376, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7888855699722720652, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: ThisItem
@@ -7618,8 +7698,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 1973860719}
     m_Modifications:
     - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_LocalPosition.z
       value: -29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110496534029528209, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1312862240822584765, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_Pivot.x
@@ -7704,6 +7800,26 @@ PrefabInstance:
     - target: {fileID: 3119474807196724224, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: m_Name
       value: ItembackGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263313700127384376, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d2a34e246c34c824fbb0fd4014065bae, type: 3}
+    - target: {fileID: 5263313700127384376, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263313700127384376, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263313700127384376, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263313700127384376, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7888855699722720652, guid: c33b3c6631cafbb4eb6c25290a972f89, type: 3}
       propertyPath: ThisItem

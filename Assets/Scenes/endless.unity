@@ -952,6 +952,14 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2508402144222376830, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
+      propertyPath: skillCD_One
+      value: 
+      objectReference: {fileID: 1180634760}
+    - target: {fileID: 2508402144222376830, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
+      propertyPath: skillCD_Two
+      value: 
+      objectReference: {fileID: 37795198}
+    - target: {fileID: 2508402144222376830, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
       propertyPath: InvincibleCd
       value: 15
       objectReference: {fileID: 0}
@@ -2675,8 +2683,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBag: {fileID: 11400000, guid: 11b7870e5b3a3304b99b8c10775b30d9, type: 2}
-  Item1: {fileID: 188054862}
-  Item2: {fileID: 1927037490}
+  Item:
+  - {fileID: 188054862}
+  - {fileID: 1927037490}
+  ItemsImage:
+  - {fileID: 1338828897}
+  - {fileID: 260373843}
 --- !u!1 &2119666602
 GameObject:
   m_ObjectHideFlags: 0
