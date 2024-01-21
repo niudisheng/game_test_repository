@@ -167,7 +167,11 @@ public class PlayerIncombat : MonoBehaviour
         if (health <= 0)
         {
             Time.timeScale = 0;
-            FinalPoint.SetActive(true);
+            if (FinalPoint)
+            {
+                 FinalPoint.SetActive(true);
+            }
+            
             Destroy(this.gameObject);
         }
     }

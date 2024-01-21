@@ -10,6 +10,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         if (move_speed == 0)
         { move_speed = 100; }
         rb = GetComponent<Rigidbody2D>();   
