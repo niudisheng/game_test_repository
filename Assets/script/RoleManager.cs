@@ -43,7 +43,7 @@ public class RoleManager : MonoBehaviour
     }
 
     //将角色设计为都不用，打开选角色界面时调用
-    public static void CancelUse()
+    static public void CancelUse()
     {
         instance.role1.RokeIsUse = false;
         instance.role2.RokeIsUse = false;

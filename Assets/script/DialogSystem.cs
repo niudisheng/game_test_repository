@@ -27,13 +27,15 @@ public class DialogSystem : MonoBehaviour
     Dictionary<string,GameObject> GameObject_dic = new Dictionary<string, GameObject>();
 
     [Header("立绘移动参数")]
-    private float left=-2500;
-    private float middle=-1000;
-    private float right=500;
+    private float left=-3179;
+    private float middle=-1700;
+    private float right=147;
     public float move_time =0.5f;
 
     [Header("移动到哪个场景")]
     public int sceneNum ;
+    public GameObject role_choose_ui;
+
     List<string> name_list = new List<string>();
     List<string> text_list = new List<string>();
     List<string[]> image_list = new List<string[]>();
@@ -56,7 +58,7 @@ public class DialogSystem : MonoBehaviour
         heroine.SetActive(false);
         female_2.SetActive(false);
         talk_ui.SetActive(false);
-        max_index = GetText(textFile)-1;
+        //max_index = GetText(textFile)-1;
         index = -1;
     }
     static public void awake_talk_ui(TextAsset textFile)
@@ -79,7 +81,7 @@ public class DialogSystem : MonoBehaviour
         {
             string[] image_pos = instance.image_list[0];
             instance.talk_ui.SetActive(true);
-            image_update(image_pos);
+            //image_update(image_pos);
             
             return updateText();
         }
@@ -93,6 +95,7 @@ public class DialogSystem : MonoBehaviour
     {
         string sign = image_pos[0];
         char pos = image_pos[1][0];
+        Debug.Log(sign);
         if (sign == "取消") 
         {
             return;
@@ -119,7 +122,7 @@ public class DialogSystem : MonoBehaviour
         {
             ga.SetActive(true);
             //tran.localPosition = new Vector3(x_coordinate, tran.localPosition.y, tran.localPosition.z);
-            tran.localPosition = new Vector3(x_coordinate, 1500, tran.localPosition.z);
+            tran.localPosition = new Vector3(x_coordinate, 700, tran.localPosition.z);
         }
         if (tran.localPosition.x != x_coordinate)
         tran.DOLocalMoveX(x_coordinate, instance.move_time);
@@ -149,9 +152,19 @@ public class DialogSystem : MonoBehaviour
                     closeUi();
                     sceneManager.Instance.changeScene(instance.sceneNum);
                 }
+                if (content == "选择角色")
+                {
+                    closeUi();
+                    instance.role_choose_ui.SetActive(true);
+                    RoleManager.CancelUse();
+                    //closeUi();
+                    //sceneManager.changeScene(instance.sceneNum);
+                }
 
                 instance.name_text.text = instance.name_list[instance.index];
                 string[] image_pos = instance.image_list[instance.index];
+                Debug.Log($"index:{instance.index}");
+                Debug.Log($"sign:{image_pos[0]}");
                 image_update(image_pos);
                 instance.text_display = instance.StartCoroutine(instance.setTextUI(content)); 
                 instance.text_finished = false;
@@ -176,6 +189,8 @@ public class DialogSystem : MonoBehaviour
     static public int GetText(TextAsset textFile)
     {
         instance.text_list.Clear();
+        instance.name_list.Clear();
+        instance.image_list.Clear();
         var rows = textFile.text.Split('\n');
         foreach (var row in rows)
         {   
@@ -193,20 +208,22 @@ public class DialogSystem : MonoBehaviour
             instance.name_list.Add(name);
             instance.text_list.Add(content);
             instance.image_list.Add(new string[2] {sign,position});
+            //Debug.Log($"image_list:{sign + position}");
         }
+        Debug.Log($"image_list:{instance.image_list[4][0]}");
         return instance.text_list.Count;
     }
      public IEnumerator setTextUI(string content)
     {   
         textLabel.text= string.Empty;
-        //string content=text_list[index];
+        
         for (int i = 0; i < content.Length; i++)
         {
             textLabel.text += content[i];
             yield return new WaitForSeconds(textSpeed);
         }
         text_finished=true;
-        //StopCoroutine(text_display);
+        
 
     }
 }
