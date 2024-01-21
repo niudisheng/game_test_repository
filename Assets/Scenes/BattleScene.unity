@@ -1694,7 +1694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 273.63324, y: -36.38916}
+  m_AnchoredPosition: {x: 219, y: -36.38916}
   m_SizeDelta: {x: 546.7465, y: 72.7808}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1128061504
@@ -1710,15 +1710,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 0.392}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 81c655d952ad6ca498cc4b1491740ee0, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1768,12 +1768,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1128061502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db6f7b1f33399274a884e04dfc28db59, type: 3}
+  m_Script: {fileID: 11500000, guid: cf5d33e7f3e9f9e498973fc001fb8727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bagPenel: {fileID: 1128061502}
-  PlayerIncombat: {fileID: 0}
-  playerBag: {fileID: 11400000, guid: 8ab765fcc1259f746844854a6ded46ab, type: 2}
 --- !u!1 &1233692106
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,6 @@ public class item : ScriptableObject
     //道具数目
     public int numItem;
    public bool isGet;//判断此道具是否被获取
-    public string Cd;
+    public float Cd;
     public string RollTime;//后摇
 }

@@ -16,5 +16,5 @@ MonoBehaviour:
   describe: "\u4F7F\u7528\u540E\u53EA\u80FD\u53CD\u5F39\u8EAB\u524D\u7684\u969C\u788D\u7269"
   numItem: 0
   isGet: 0
-  Cd: "10\u79D2"
+  Cd: 10
   RollTime: "0.5\u79D2\u540E\u6447"
