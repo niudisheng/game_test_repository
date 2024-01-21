@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BagnamagerInBattleScene : MonoBehaviour
 {
     public static BagnamagerInBattleScene Instance;
     public bag playerBag;
+    public Image Item1;
+    public Image Item2;
     private void Awake()
     {
         if (Instance != null)
@@ -17,7 +20,9 @@ public class BagnamagerInBattleScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //根据背包里的item图片更新到UI里
+        Item1.sprite = playerBag.items[0].ItemSprite;
+        Item2.sprite= playerBag.items[1].ItemSprite;
     }
 
     // Update is called once per frame
@@ -70,7 +75,7 @@ public class BagnamagerInBattleScene : MonoBehaviour
             }
         }
     }
-    //根据背包里的item图片更新到UI里
+    
     //根据道具
 
 }

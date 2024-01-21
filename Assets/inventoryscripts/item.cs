@@ -5,6 +5,7 @@ using UnityEngine;
 public class item : ScriptableObject
 {
     //道具描述？
+    public Sprite ItemSprite;
     public string Name;
    public string describe;
     //道具数目
