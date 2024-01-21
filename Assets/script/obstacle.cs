@@ -9,13 +9,15 @@ public class obstacle : MonoBehaviour
     public float leftSpeed;
     public float rightSpeed;
     public bool isReBound;
-    public int damageToBoss;
+    public float damageToBoss;
+    private SpriteRenderer ObstacleRen;
     // Start is called before the first frame update
     // Update is called once per frame
     private void Start()
     {
         isReBound = false;
         rb = GetComponent<Rigidbody2D>();
+        ObstacleRen = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -27,12 +29,19 @@ public class obstacle : MonoBehaviour
         {
             rb.velocity = new Vector2(rightSpeed, rb.velocity.y);//向左移动
         }
+        if (rb.velocity.x > 0)
+        {
+            ObstacleRen.flipX = true;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("ObstacleRemover")|| collision.gameObject.CompareTag("boss"))//在摄像机外去除障碍
         {
-            Destroy(this.gameObject);
+            isReBound = false;
+            ObstacleRen.flipX = false;
+            poolMgr.Instance.putObj(this.gameObject);
+
         }
     }
 }

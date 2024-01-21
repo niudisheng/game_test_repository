@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8494740301370368296}
   m_Layer: 0
   m_Name: MagicBall
-  m_TagString: magicBalll
+  m_TagString: MagicBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476670770f5c7154f80339465039e018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BallDamage: 2
+  BallDamage: 25
   Speed: 10
 --- !u!50 &8106451719158956207
 Rigidbody2D:

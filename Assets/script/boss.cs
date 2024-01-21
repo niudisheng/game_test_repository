@@ -9,9 +9,9 @@ public class boss : MonoBehaviour
     public float refreshTime;//间隔多久刷新障碍物
     private float startRefreashTime;
     private int randomNum;
-    public int BossHealth;//boss生命
     public obstacle obstacleReBound;
     public MagicBall MagicBall;
+    public point point;
     //private int lastRandomNum;
     // Start is called before the first frame update
     void Start()
@@ -22,13 +22,7 @@ public class boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ObstacRefresh();
-        print(randomNum);
-        if (BossHealth < 0)
-        {
-            print("boss死亡");
-        }
-        
+        ObstacRefresh();   
     }
     void ObstacRefresh()
     {
@@ -38,16 +32,16 @@ public class boss : MonoBehaviour
         {
             if(randomNum<=2&&randomNum>=1)//第一行
             {
-               Instantiate(Obstacle, transform.GetChild(0).transform.position, Quaternion.identity);
+                poolMgr.Instance.getObj("obstacle", transform.GetChild(0).transform);
             }
             
             if (randomNum <= 5 && randomNum >= 3)//第二行
             {
-               Instantiate(Obstacle, transform.GetChild(1).transform.position, Quaternion.identity);
+                poolMgr.Instance.getObj("obstacle", transform.GetChild(1).transform);
             }
              if (randomNum >= 6 && randomNum <= 7)//第三行  
             {
-                Instantiate(Obstacle, transform.GetChild(2).transform.position, Quaternion.identity);
+                poolMgr.Instance.getObj("obstacle", transform.GetChild(2).transform);
             }
             refreshTime = startRefreashTime;
         }
@@ -56,11 +50,11 @@ public class boss : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("obstacle"))
         {
-            BossHealth -= obstacleReBound.damageToBoss;
+            point.TimePoint +=obstacleReBound.damageToBoss;
         }
-        if (collision.gameObject.CompareTag("magicBall"))
+        if (collision.gameObject.CompareTag("MagicBall"))
         {
-            BossHealth -= MagicBall.BallDamage;
+            point.TimePoint +=MagicBall.BallDamage;
         }
     }
 }

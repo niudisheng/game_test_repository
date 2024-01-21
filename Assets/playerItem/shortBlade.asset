@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e08f6c5f1906994fa8aee1b40b1b33d, type: 3}
   m_Name: shortBlade
   m_EditorClassIdentifier: 
-  Name: " \u4E0D\u4F11\u77ED\u5203"
+  ItemSprite: {fileID: 21300000, guid: 5504750570a039d4ea0aa9080c5b47e0, type: 3}
+  Name: "\u4E0D\u4F11\u77ED\u5203"
   describe: "\u4F7F\u7528\u540E\u53EA\u80FD\u53CD\u5F39\u8EAB\u524D\u7684\u969C\u788D\u7269"
   numItem: 0
   isGet: 0

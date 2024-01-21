@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerIncombat : MonoBehaviour
 {
+    public GameObject FinalPoint;
     public Transform playerTrans;
     private BoxCollider2D playerCollider;
     private SpriteRenderer PlayerRender;
@@ -17,6 +18,7 @@ public class PlayerIncombat : MonoBehaviour
     public BoxCollider2D shortBladeColli;
     public SpriteRenderer LightTingsprite;
     public boss boss;
+    public point point;
 
     public int maxHealth;                //设置最大生命值
     public int health;
@@ -51,8 +53,8 @@ public class PlayerIncombat : MonoBehaviour
     public float reBoundTime;//反弹持续时间
     public float ShortBladeTime;//短刃效果持续时间
 
-    public Image skillCD;
-    public float CDtime;
+    public Image skillCD_One;
+    public Image skillCD_Two;
 
     public int judgementDamage;//制裁技能伤害
 
@@ -74,6 +76,11 @@ public class PlayerIncombat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isUseShield = false;
+        isUseWand = false;
+        isUseReBound = false;
+        isUseShortBlade = false;
+        isUseFinalJudgement = false;
         startInvincibleTime = invincibleTime;
         invincibleTime = 0;
         InvincibleStartCd = InvincibleCd;
@@ -98,7 +105,8 @@ public class PlayerIncombat : MonoBehaviour
     void Update()
     {
         Move();
-        Skill();
+        SkillOne();
+        SkillTwo();
         CanInvincble();//无敌函数
         TurnColor();
          invincibleTime -= Time.deltaTime;//无敌时间减少，由无敌时间判断是否无敌
@@ -107,6 +115,12 @@ public class PlayerIncombat : MonoBehaviour
         wend();
         shorBlade();
         FinalJudgement();
+        playerDeath();
+       // Debug.Log(isUseFinalJudgement);
+       // Debug.Log(isUseReBound);
+       // Debug.Log(isUseShield);
+       // Debug.Log(isUseShortBlade);
+       // Debug.Log(isUseWand);
     }
     void TurnColor()
     {
@@ -126,16 +140,18 @@ public class PlayerIncombat : MonoBehaviour
     }
     private void OnEnable()
     {
+        Time.timeScale = 1;
         //先把道具函数初始化到事件中心
+        eventsystem.Instance.clearAll();
         eventsystem.Instance.setUpOrAdd("盾牌", PlayerShield);//此string变量和道具名字应该相同
         eventsystem.Instance.setUpOrAdd("魔力法杖", PlayerWand);
         eventsystem.Instance.setUpOrAdd("反弹护盾", playerReBound);
-        eventsystem.Instance.setUpOrAdd(" 不休短刃", PlayerShortBlade);
+        eventsystem.Instance.setUpOrAdd("不休短刃", PlayerShortBlade);
         eventsystem.Instance.setUpOrAdd("终焉圣裁", PlayerFinalJudgement);
         eventsystem.Instance.setUpOrAdd("玩家使用盾牌", PlayerIsUseShield);//此string变量和道具名字应该相同
         eventsystem.Instance.setUpOrAdd("玩家使用魔力法杖", PlayerIsUseWand);
         eventsystem.Instance.setUpOrAdd("玩家使用反弹护盾", playerIsUseReBound);
-        eventsystem.Instance.setUpOrAdd(" 玩家使用不休短刃", PlayerIsUseShortBlade);
+        eventsystem.Instance.setUpOrAdd("玩家使用不休短刃", PlayerIsUseShortBlade);
         eventsystem.Instance.setUpOrAdd("玩家使用终焉圣裁", PlayerIsUseFinalJudgement);
         //使场景刷新后在前一个场景已经获取的道具生效
         for (int i = 0; i < playerBag.items.Count; i++)
@@ -144,6 +160,15 @@ public class PlayerIncombat : MonoBehaviour
             {
                 eventsystem.Instance.EventInvoke(playerBag.items[i].Name);
             }
+        }
+    }
+   void playerDeath()
+    {
+        if (health <= 0)
+        {
+            Time.timeScale = 0;
+            FinalPoint.SetActive(true);
+            Destroy(this.gameObject);
         }
     }
     private void Awake()
@@ -179,22 +204,47 @@ public class PlayerIncombat : MonoBehaviour
         }
     }
 
-    void Skill()
+    void SkillOne()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (playerBag.items.Count >= 1)
         {
-            
-            if (skillCD.fillAmount == 0f)        //技能处于就绪状态
+            if (Input.GetKeyDown(KeyCode.J))
             {
-                
-                skillCD.fillAmount = 1f;
-                isCD = true;
+
+                if (skillCD_One.fillAmount == 0f)        //技能处于就绪状态
+                {
+                    skillCD_One.fillAmount = 1f;
+                    isCD = true;
+                }
+            }
+            if (isCD)                                //技能处于冷却状态
+            {
+                skillCD_One.fillAmount -= 1f / playerBag.items[0].Cd * Time.deltaTime;
             }
         }
-        if (isCD)                                //技能处于冷却状态
+            
+    }
+
+    void SkillTwo()
+    {
+        if (playerBag.items.Count >= 2)
         {
-            skillCD.fillAmount -= 1f / CDtime * Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+
+                if (skillCD_Two.fillAmount == 0f)        //技能处于就绪状态
+                {
+
+                    skillCD_Two.fillAmount = 1f;
+                    isCD = true;
+                }
+            }
+            if (isCD)                                //技能处于冷却状态
+            {
+                skillCD_Two.fillAmount -= 1f / playerBag.items[1].Cd * Time.deltaTime;
+            }
         }
+            
     }
 
     public void TakeDamage (int damage)  //角色受伤
@@ -228,11 +278,14 @@ public class PlayerIncombat : MonoBehaviour
         InvincibleCd -= Time.deltaTime;
         if (haveShield && InvincibleCd<=0)//判断是否可以解锁无敌
         {
-            if (isUseShield)
+            if (isUseShield == true)
             {
+                isUseShield = false;
+                print("已经使用无敌盾牌");
                 invincibleTime = skillInvincibleTime;//无敌状态开启   
                 InvincibleCd = InvincibleStartCd;
                 isSkillInvincible = true;
+                
             }
         }
     }
@@ -241,14 +294,16 @@ public class PlayerIncombat : MonoBehaviour
         reBoundCd -= Time.deltaTime;
         if (CanReBound && reBoundCd <= 0)//判断是否可以解锁无敌
         {
-            if (isUseReBound)
-            {
-                print("成功开启技能");
+            if (isUseReBound==true)
+            { 
+                isUseReBound = false;
+                print("成功开启反弹护盾技能");
                 reBoundColli.enabled = true;
                 StartCoroutine("deleteColli");
                 reBoundCd = startReBoundCd;
                 invincibleTime = ReBoundInvincibTime;
                 isSkillInvincible = true;
+               
             }
         }
     }
@@ -257,12 +312,14 @@ public class PlayerIncombat : MonoBehaviour
         wandCd -= Time.deltaTime;
         if (haveWand && wandCd <= 0)//判断是否可以解锁无敌
         {
-            if (isUseWand)
+            if (isUseWand == true)
             {
+                isUseWand = false;
                 print("成功开启wind技能");
                 wandCd = startWandCd;
                 RollBackTime = wandRollBackTIme;
                 StartCoroutine("lunch");
+                
             }
         }
     }
@@ -285,14 +342,16 @@ public class PlayerIncombat : MonoBehaviour
         shortBladeCd-= Time.deltaTime;
         if (haveShortBlade && shortBladeCd <= 0)//判断是否可以解锁无敌
         {
-            if (isUseShortBlade)
+            if (isUseShortBlade == true)
             {
-                print("成功开启shortBlade技能");
+                isUseShortBlade = false;
+                print("成功开启短刃技能");
                 shortBladeColli.enabled = true;
                 StartCoroutine("deleteShortBladeColli");//消除短刃的碰撞体
                 shortBladeCd = shortBladeStartCd;
                 RollBackTime = shortBladeRollBackTime;
                 
+               print("成功开启shortBlade技能");
             }
         }
     }
@@ -300,15 +359,16 @@ public class PlayerIncombat : MonoBehaviour
     {
         yield return new WaitForSeconds(ShortBladeTime);
         shortBladeColli.enabled = false;
-        
+        StopCoroutine("deleteShortBladeColli");
     }
     public void FinalJudgement()//终阎制裁
     {
         finalJudgementCd-= Time.deltaTime;
         if (haveFinalJudgement && finalJudgementCd<= 0)//判断是否可以解锁无敌
         {
-            if (isUseFinalJudgement)
+            if (isUseFinalJudgement == true)
             {
+                isUseFinalJudgement = false;
                 print("成功开启FinalJudgement技能");
                 
                 StartCoroutine("generateLighting");
@@ -323,7 +383,7 @@ public class PlayerIncombat : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         LightTingsprite.enabled = true;
         print("制裁");
-        boss.BossHealth -=judgementDamage;
+        point.TimePoint +=judgementDamage;
         StartCoroutine("deleteLighting");
     }
     IEnumerator deleteLighting()

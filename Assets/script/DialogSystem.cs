@@ -150,7 +150,7 @@ public class DialogSystem : MonoBehaviour
                 if (content == "Ìø×ª")
                 {   
                     closeUi();
-                    sceneManager.changeScene(instance.sceneNum);
+                    sceneManager.Instance.changeScene(instance.sceneNum);
                 }
                 if (content == "Ñ¡Ôñ½ÇÉ«")
                 {

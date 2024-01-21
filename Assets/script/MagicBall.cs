@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MagicBall : MonoBehaviour
 {
-    public int BallDamage;
+    public float BallDamage;
     private Rigidbody2D rigidbody;
     public float Speed;
     // Start is called before the first frame update

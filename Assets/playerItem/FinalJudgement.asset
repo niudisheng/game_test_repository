@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e08f6c5f1906994fa8aee1b40b1b33d, type: 3}
   m_Name: FinalJudgement
   m_EditorClassIdentifier: 
+  ItemSprite: {fileID: 21300000, guid: fea3014c995ad864fa3e9366d47bd2b4, type: 3}
   Name: "\u7EC8\u7109\u5723\u88C1"
   describe: "\u4F7F\u7528\u540E\u53EC\u5524\u96F7\u9706\uFF0C\u5728boss\u5904\u5BF9\u5176\u9020\u6210100\u70B9\u4F24\u5BB3"
   numItem: 0
   isGet: 0
-  Cd: 25
+  Cd: 15
   RollTime: "\u524D\u64470.5\u79D2\uFF0C\u540E\u64470.5\u79D2"
