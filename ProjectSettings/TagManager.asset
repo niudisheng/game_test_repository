@@ -3,14 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - ObstacleRemover
-  - obstacle
-  - inteBox
-  - inteNpc
-  - magicBalll
-  - boss
-  - MagicBall
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -18,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - UI2
+  - 
   - 
   - 
   - 
@@ -47,24 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-<<<<<<< HEAD
-  - name: player
-    uniqueID: 3349973777
-    locked: 0
-  - name: UI
-    uniqueID: 2366600573
-=======
-  - name: 4
-    uniqueID: 1700562405
-    locked: 0
-  - name: 3
-    uniqueID: 2421560737
-    locked: 0
-  - name: 2
-    uniqueID: 3328037843
-    locked: 0
-  - name: 1
-    uniqueID: 4243083203
->>>>>>> 美术公用分支
     locked: 0
