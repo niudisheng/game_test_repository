@@ -13,6 +13,8 @@ public class BagnamagerInBattleScene : MonoBehaviour
     public GameObject[] ItemsImage = new GameObject[2];
     private float itemCd1=0;
     private float itemCd2=0;
+    public item shield;
+    public bool isAddItem;
     private void Awake()
     {
         if (Instance != null)
@@ -36,6 +38,14 @@ public class BagnamagerInBattleScene : MonoBehaviour
             {
                 ItemsImage[i].SetActive(false);
             }
+        }
+    }
+    private void OnEnable()
+    {
+        if (isAddItem)
+        {
+            playerBag.items.Clear();
+            playerBag.items.Add(shield);
         }
     }
     // Update is called once per frame
