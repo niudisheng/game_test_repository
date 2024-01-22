@@ -13,6 +13,7 @@ public class scene0process : MonoBehaviour
 
     private void Start()
     {
+        soundManager.Instance.playMusic("story1");
         StartTimer();
     }
 

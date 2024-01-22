@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        soundManager.Instance.playMusic("theme");
+    }
     public void PlayGame()
     {
         sceneManager.Instance.changeScene(1);
