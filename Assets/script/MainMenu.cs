@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame()
     {
-        sceneManager.Instance.changeScene(1);
+        sceneManager.Instance.changeScene(3);
     }
 
     public void QuitGame()
