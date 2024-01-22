@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public bag playerBag;
     private void Start()
     {
         soundManager.Instance.playMusic("theme");
@@ -17,5 +18,9 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void clear()
+    {
+        playerBag.items.Clear();
     }
 }

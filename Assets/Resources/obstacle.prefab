@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c762f238dfd7234dab399c9a1040075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftSpeed: 10
+  leftSpeed: 20
   rightSpeed: 15
   isReBound: 0
   damageToBoss: 20

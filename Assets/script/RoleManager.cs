@@ -69,6 +69,15 @@ public class RoleManager : MonoBehaviour
     }
     public void clearBag()
     {
+        if (playerBag.items.Count >= 2)
+        {
+            playerBag.items[0].isGet = false;
+            playerBag.items[1].isGet = false;
+        }
+        if (playerBag.items.Count ==1)
+        {
+            playerBag.items[0].isGet = false;
+        }
         playerBag.items.Clear();
     }
 }

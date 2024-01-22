@@ -22,7 +22,6 @@ public class point : MonoBehaviour
         {
             TimePoint +=(Time.deltaTime)*3f;
         PointText.text = ((int)TimePoint).ToString();
-        print(TimePoint);
         }
         
     }

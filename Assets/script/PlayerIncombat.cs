@@ -130,6 +130,7 @@ public class PlayerIncombat : MonoBehaviour
     {
         if (isChangeToNextScene&&health<=0)
         {
+            playerBag.items.Clear();
             sceneManager.Instance.changeScene(6);
         }
     }
@@ -270,7 +271,7 @@ public class PlayerIncombat : MonoBehaviour
         {
               health -= damage;
             isDamage = true;
-            if (isBloodLock&&health<=1)
+            if (isBloodLock&&health<=0)
             {
                 health += damage;
             }
