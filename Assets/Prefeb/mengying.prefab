@@ -200,12 +200,18 @@ GameObject:
   - component: {fileID: 6001852250723360526}
   - component: {fileID: 8525370949525459291}
   - component: {fileID: 1535626153704495249}
+<<<<<<< HEAD
   - component: {fileID: 8068051983003212673}
   - component: {fileID: 1737267129515287824}
   - component: {fileID: 2508402144222376830}
   m_Layer: 0
   m_Name: mengying
   m_TagString: Player
+=======
+  m_Layer: 0
+  m_Name: mengying
+  m_TagString: Untagged
+>>>>>>> 美术公用分支
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -279,6 +285,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+<<<<<<< HEAD
 --- !u!50 &8068051983003212673
 Rigidbody2D:
   serializedVersion: 4
@@ -373,6 +380,8 @@ MonoBehaviour:
   roadDown: -8
   skillCD: {fileID: 0}
   CDtime: 2
+=======
+>>>>>>> 美术公用分支
 --- !u!1 &4302653549602757944
 GameObject:
   m_ObjectHideFlags: 0
