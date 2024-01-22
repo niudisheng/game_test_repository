@@ -1298,6 +1298,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1447252005}
+        m_TargetAssemblyTypeName: RoleManager, Assembly-CSharp
+        m_MethodName: clearBag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &301291905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5459,6 +5471,7 @@ MonoBehaviour:
   role2: {fileID: 11400000, guid: b7d0c78ffef7cd548a37f9b972db3df5, type: 2}
   RemindPanel: {fileID: 1711510573}
   ChooseItem: {fileID: 1438641642}
+  playerBag: {fileID: 11400000, guid: 11b7870e5b3a3304b99b8c10775b30d9, type: 2}
 --- !u!1 &1455971822
 GameObject:
   m_ObjectHideFlags: 0

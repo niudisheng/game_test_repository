@@ -15,6 +15,7 @@ public class RoleManager : MonoBehaviour
     public Role role2;
     public GameObject RemindPanel;
     public GameObject ChooseItem;
+    public bag playerBag;
     private void Awake()
     {
         if (instance != null)
@@ -65,5 +66,9 @@ public class RoleManager : MonoBehaviour
             this.gameObject.SetActive(false);
             ChooseItem.SetActive(true);
         }
+    }
+    public void clearBag()
+    {
+        playerBag.items.Clear();
     }
 }

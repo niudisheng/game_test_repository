@@ -59,6 +59,8 @@ public class PlayerIncombat : MonoBehaviour
     public int judgementDamage;//制裁技能伤害
 
     bool isCD;
+    public bool isBloodLock;//是否锁血
+    public bool isChangeToNextScene;
     private bool isDamage;
     private bool isSkillInvincible;
     //判断玩家是否可以使用技能的bool值
@@ -116,11 +118,20 @@ public class PlayerIncombat : MonoBehaviour
         shorBlade();
         FinalJudgement();
         playerDeath();
-       // Debug.Log(isUseFinalJudgement);
-       // Debug.Log(isUseReBound);
-       // Debug.Log(isUseShield);
-       // Debug.Log(isUseShortBlade);
-       // Debug.Log(isUseWand);
+        // Debug.Log(isUseFinalJudgement);
+        // Debug.Log(isUseReBound);
+        // Debug.Log(isUseShield);
+        // Debug.Log(isUseShortBlade);
+        // Debug.Log(isUseWand);
+        IsChangeToNextScene();
+    }
+
+    void IsChangeToNextScene()
+    {
+        if (isChangeToNextScene&&health<=0)
+        {
+            sceneManager.Instance.changeScene(6);
+        }
     }
     void TurnColor()
     {
@@ -259,6 +270,10 @@ public class PlayerIncombat : MonoBehaviour
         {
               health -= damage;
             isDamage = true;
+            if (isBloodLock&&health<=1)
+            {
+                health += damage;
+            }
             eventsystem.Instance.EventInvoke("playerTakeDamage");//爱心减少
             Debug.Log("playerTakeDamage");
             if (PlayerRender.color != Color.green)
