@@ -10,10 +10,10 @@ public class scene0process : MonoBehaviour
     private float timerDuration = 2f; // 计时器持续时间（秒）
     private float currentTime = 0f; // 当前计时器时间
     private bool isTimerRunning = false; // 标志位，指示计时器是否在运行中
-
+    public string BGM;
     private void Start()
     {
-        soundManager.Instance.playMusic("story1");
+        soundManager.Instance.playMusic(BGM);
         StartTimer();
     }
 
