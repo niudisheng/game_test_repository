@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
-
+using Unity.VisualScripting;
 
 public class PlayerIncombat : MonoBehaviour
 {
@@ -56,6 +56,10 @@ public class PlayerIncombat : MonoBehaviour
     public float reBoundTime;//反弹持续时间
     public float ShortBladeTime;//短刃效果持续时间
 
+    public Role role1;//两个角色
+    public Role role2;
+    public GameObject[] roles = new GameObject[2];
+
     public Image skillCD_One;
     public Image skillCD_Two;
 
@@ -72,12 +76,14 @@ public class PlayerIncombat : MonoBehaviour
     public bool CanReBound;
     public bool haveShortBlade;
     public bool haveFinalJudgement;
+    public bool isChangeRole;//是否改变角色
 
     private bool isUseShield;
     private bool isUseWand;
     private bool isUseReBound;
     private bool isUseShortBlade;
     private bool isUseFinalJudgement;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -126,6 +132,23 @@ public class PlayerIncombat : MonoBehaviour
         // Debug.Log(isUseShortBlade);
         // Debug.Log(isUseWand);
         IsChangeToNextScene();
+        IsChangeRole();
+    }
+   void IsChangeRole()
+    {
+        if (isChangeRole)
+        {
+             if (role1.RokeIsUse)
+            {
+                roles[0].gameObject.SetActive(true);
+                roles[1].gameObject.SetActive(false);
+            }
+             else if (role2.RokeIsUse)
+            {
+                roles[0].gameObject.SetActive(false);
+                roles[1].gameObject.SetActive(true);
+            }
+        }
     }
 
     void IsChangeToNextScene()
@@ -207,7 +230,8 @@ public class PlayerIncombat : MonoBehaviour
                 }
                 else if ((playerTrans.position.y == roadMiddle || playerTrans.position.y == roadDown) && RollBackTime <= 0) //处于中间or下路，移动
                 {
-                    MoveUP();
+                    playerTrans.DOMoveY(moveDistance, moveTime).SetRelative();
+                    soundManager.Instance.playSFX("jump");
                 }
 
             }
@@ -223,7 +247,8 @@ public class PlayerIncombat : MonoBehaviour
                 }
                 else if ((playerTrans.position.y == roadMiddle || playerTrans.position.y == roadUp) && RollBackTime <= 0) //处于中间or上路，移动
                 {
-                    MoveDown();
+                    playerTrans.DOMoveY(-moveDistance, moveTime).SetRelative();
+                    soundManager.Instance.playSFX("jump");
                 }
             }      
         }
@@ -252,14 +277,14 @@ public class PlayerIncombat : MonoBehaviour
 
     public void MoveUP()
     {
-        playerTrans.DOMoveY(moveDistance, moveTime).SetRelative();
+        playerTrans.DOMoveY(roadUp, moveTime);
         soundManager.Instance.playSFX("jump");
         //soundManager.jumpingSound();
     }
 
     public void MoveDown()
     {
-        playerTrans.DOMoveY(-moveDistance, moveTime).SetRelative();
+        playerTrans.DOMoveY(roadDown, moveTime);
         soundManager.Instance.playSFX("jump");
         //soundManager.jumpingSound();
     }
