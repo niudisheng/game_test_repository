@@ -93,6 +93,6 @@ public class bagManager : MonoBehaviour
     }
     public void ToEndlessScene()
     {
-        sceneManager.Instance.changeScene(5);
+        sceneManager.Instance.changeScene(6);
     }
 }
