@@ -100,10 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c762f238dfd7234dab399c9a1040075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftSpeed: 20
+  leftSpeed: 10
   rightSpeed: 15
   isReBound: 0
   damageToBoss: 20
+  isChangeSpeed: 1
 --- !u!50 &4340632006789687405
 Rigidbody2D:
   serializedVersion: 4

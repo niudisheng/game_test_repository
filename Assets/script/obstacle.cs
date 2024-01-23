@@ -21,9 +21,10 @@ public class obstacle : MonoBehaviour
     }
     void Update()
     {
+    
         if (!isReBound)
         {
-            rb.velocity = new Vector2(-leftSpeed, rb.velocity.y);//向左移动
+            rb.velocity = new Vector2(-GameObject.FindWithTag("boss").GetComponent<boss>().leftSpeed, rb.velocity.y);//向左移动
         }
        else
         {
