@@ -690,6 +690,10 @@ MonoBehaviour:
   positionLittleChange:
   - 0
   - 0
+  isChangeFlashTime: 0
+  changePosi: 0
+  isChangeObstacleSpeed: 0
+  leftSpeed: 10
 --- !u!212 &243475903
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2181,6 +2185,7 @@ GameObject:
   - component: {fileID: 1712736270}
   - component: {fileID: 1712736272}
   - component: {fileID: 1712736271}
+  - component: {fileID: 1712736273}
   m_Layer: 5
   m_Name: GuideUI
   m_TagString: Untagged
@@ -2245,6 +2250,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712736269}
   m_CullTransparentMesh: 1
+--- !u!114 &1712736273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712736269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9ae404ecc34194eb35459069ae8d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallTwo: {fileID: 148758978}
+  Player: {fileID: 2080930494}
 --- !u!1 &1719624828
 GameObject:
   m_ObjectHideFlags: 0
