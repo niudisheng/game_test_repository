@@ -19,7 +19,6 @@ public class PlayerIncombat : MonoBehaviour
     public SpriteRenderer LightTingsprite;
     public boss boss;
     public point point;
-    public bool finishGuide;
 
     public int maxHealth;                //设置最大生命值
     public int health;
@@ -101,6 +100,7 @@ public class PlayerIncombat : MonoBehaviour
         health = maxHealth;              //初始化生命值
         playerCollider = GetComponent<BoxCollider2D>();
         isCD = false;
+       
     }
 
     // Update is called once per frame
@@ -111,8 +111,8 @@ public class PlayerIncombat : MonoBehaviour
         SkillTwo();
         CanInvincble();//无敌函数
         TurnColor();
-        invincibleTime -= Time.deltaTime;//无敌时间减少，由无敌时间判断是否无敌
-        RollBackTime -= Time.deltaTime;
+         invincibleTime -= Time.deltaTime;//无敌时间减少，由无敌时间判断是否无敌
+       RollBackTime -= Time.deltaTime;
         ReBound();
         wend();
         shorBlade();
@@ -195,33 +195,30 @@ public class PlayerIncombat : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))//按下按键“W”
         {
-            if (finishGuide)
+            if (playerTrans.position.y == roadUp)  //处于最高路，不再移动
             {
-                if (playerTrans.position.y == roadUp)  //处于最高路，不再移动
-                {
-                    return;
-                }
-                else if ((playerTrans.position.y == roadMiddle || playerTrans.position.y == roadDown) && RollBackTime <= 0) //处于中间or下路，移动
-                {
-                    MoveUP();
-                }
-
+                return;
             }
-
+            else if ((playerTrans.position.y == roadMiddle || playerTrans.position.y == roadDown )&&RollBackTime<=0) //处于中间or下路，移动
+            {
+                playerTrans.DOMoveY(moveDistance, moveTime).SetRelative();
+                soundManager.Instance.playSFX("jump");
+                //soundManager.jumpingSound();
+            }
+            
         }
         if (Input.GetKeyDown(KeyCode.S))//按下按键“S”
         {
-            if (finishGuide)
+            if (playerTrans.position.y == roadDown) //处于最低路，不再移动
             {
-                if (playerTrans.position.y == roadDown) //处于最低路，不再移动
-                {
-                    return;
-                }
-                else if ((playerTrans.position.y == roadMiddle || playerTrans.position.y == roadUp) && RollBackTime <= 0) //处于中间or上路，移动
-                {
-                    MoveDown();
-                }
-            }      
+                return;
+            }
+            else if ((playerTrans.position.y == roadMiddle || playerTrans.position.y == roadUp) && RollBackTime <= 0) //处于中间or上路，移动
+            {
+                playerTrans.DOMoveY(-moveDistance, moveTime).SetRelative();
+                soundManager.Instance.playSFX("jump");
+                //soundManager.jumpingSound();
+            }
         }
     }
 
@@ -244,20 +241,6 @@ public class PlayerIncombat : MonoBehaviour
             }
         }
             
-    }
-
-    public void MoveUP()
-    {
-        playerTrans.DOMoveY(moveDistance, moveTime).SetRelative();
-        soundManager.Instance.playSFX("jump");
-        //soundManager.jumpingSound();
-    }
-
-    public void MoveDown()
-    {
-        playerTrans.DOMoveY(-moveDistance, moveTime).SetRelative();
-        soundManager.Instance.playSFX("jump");
-        //soundManager.jumpingSound();
     }
 
     void SkillTwo()
@@ -471,15 +454,5 @@ public class PlayerIncombat : MonoBehaviour
     void PlayerIsUseFinalJudgement()
     {
         isUseFinalJudgement = true;
-    }
-
-    public void FinishGuide()
-    {
-        finishGuide = true;
-    }
-
-    public void InGuide()
-    {
-        finishGuide = false;
     }
 }
