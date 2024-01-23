@@ -281,7 +281,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -627,7 +627,10 @@ MonoBehaviour:
   positionLittleChange:
   - 0
   - 0
+  isChangeFlashTime: 0
   changePosi: 0
+  isChangeObstacleSpeed: 0
+  leftSpeed: 0
 --- !u!212 &243475903
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -648,7 +651,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1163,17 +1166,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2080930499}
   m_SourcePrefab: {fileID: 100100000, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
---- !u!114 &515375858 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2508402144222376830, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
-  m_PrefabInstance: {fileID: 515375857}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080930494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d5019e9a76f51f459696de1a1161d05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &515375859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6001852250723360526, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
@@ -1955,7 +1947,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1974,7 +1966,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1928366723
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: -10
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2315,7 +2307,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2491,7 +2483,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2638,7 +2630,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2748,7 +2740,7 @@ PrefabInstance:
     - target: {fileID: 8214716299662186409, guid: 9f44a0118686caf4f966526c9110bd1d, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 515375858}
+      objectReference: {fileID: 0}
     - target: {fileID: 8214716299662186409, guid: 9f44a0118686caf4f966526c9110bd1d, type: 3}
       propertyPath: heartFull
       value: 
@@ -3135,7 +3127,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3411,7 +3403,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

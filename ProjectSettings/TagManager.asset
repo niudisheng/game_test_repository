@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - inteBox
+  - inteNpc
+  - boss
+  - ObstacleRemover
+  - obstacle
+  - MagicBall
   layers:
   - Default
   - TransparentFX
@@ -40,4 +46,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: "\u4EBA\u7269"
+    uniqueID: 3425356291
+    locked: 0
+  - name: "\u5730\u56FE"
+    uniqueID: 2231088027
+    locked: 0
+  - name: "\u5730\u56FE2"
+    uniqueID: 16316367
+    locked: 0
+  - name: "\u5730\u56FE3"
+    uniqueID: 1334064725
+    locked: 0
+  - name: "\u5730\u56FE4"
+    uniqueID: 1932003917
     locked: 0
