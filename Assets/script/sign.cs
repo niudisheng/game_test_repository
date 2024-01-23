@@ -41,9 +41,9 @@ public class sign : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision_player = collision;
         if (collision.gameObject.CompareTag("inteNpc") || collision.gameObject.CompareTag("inteBox"))
         {
+            collision_player = collision;
             isSignActive = true;
             Debug.Log("enter");
         }
