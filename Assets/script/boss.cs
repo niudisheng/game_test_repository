@@ -21,7 +21,11 @@ public class boss : MonoBehaviour
     public float moveSpeed;
     public Transform[] position = new Transform[4];
     private Vector2 nowPosition;
-    public float[] positionLittleChange = new float[2];
+    public float[] positionLittleChange = new float[3];
+    public bool isChangeFlashTime;
+    public bool changePosi;   
+    public bool isChangeObstacleSpeed;
+    public float leftSpeed;
     //private int lastRandomNum;
     // Start is called before the first frame update
     void Start()
@@ -35,21 +39,40 @@ public class boss : MonoBehaviour
     {
         ObstacRefresh();
         ChangePositionTime();
+        IsChangeFlashTime();
+        print(startRefreashTime);
+        IsChangeObstacleSpeed();
+       
+    }
+    void IsChangeObstacleSpeed()
+    {
+        if (isChangeObstacleSpeed && leftSpeed <= 20)
+        {
+            leftSpeed += (Time.deltaTime * 0.03f);
+        }
+        print(leftSpeed);
+    }
+   void IsChangeFlashTime()
+    {
+        if (isChangeFlashTime&&startRefreashTime>=0.6)
+        {
+            startRefreashTime -= (Time.deltaTime * 0.005f);
+        }
     }
     void ChangePositionTime()
     {
         changePositionTime -= Time.deltaTime;
-        if (changePositionTime <= 0)
+        if (changePositionTime <= 0 && changePosi)
         {
             randomNumForPosit = Random.Range(1, 4);
             print(randomNumForPosit);
             if (randomNumForPosit == 1)
             {
-                nowPosition = new Vector2(transform.position.x, position[randomNumForPosit - 1].position.y - positionLittleChange[0]);
+                nowPosition = new Vector2(transform.position.x , position[randomNumForPosit - 1].position.y - positionLittleChange[0]);
             }
             if (randomNumForPosit == 2)
             {
-                nowPosition = new Vector2(transform.position.x, position[randomNumForPosit - 1].position.y);
+                nowPosition = new Vector2(transform.position.x , position[randomNumForPosit - 1].position.y);
             }
             if (randomNumForPosit == 3)
             {
@@ -57,7 +80,7 @@ public class boss : MonoBehaviour
             }
             changePositionTime = StartChangePositionTime;
         }
-        transform.position = Vector3.MoveTowards(transform.position, nowPosition, moveSpeed);
+        transform.position = Vector2.MoveTowards(transform.position,new Vector2(this.transform.position.x,nowPosition.y), moveSpeed);
     }
     void ObstacRefresh()
     {
