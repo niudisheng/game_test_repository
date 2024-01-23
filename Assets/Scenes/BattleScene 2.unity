@@ -433,6 +433,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208639087}
   m_CullTransparentMesh: 1
+--- !u!114 &227303426 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2170961449167039132, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
+  m_PrefabInstance: {fileID: 515375857}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d5019e9a76f51f459696de1a1161d05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &243475901
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,7 +2214,7 @@ PrefabInstance:
     - target: {fileID: 8214716299662186409, guid: 9f44a0118686caf4f966526c9110bd1d, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 227303426}
     - target: {fileID: 8214716299662186409, guid: 9f44a0118686caf4f966526c9110bd1d, type: 3}
       propertyPath: heartFull
       value: 
