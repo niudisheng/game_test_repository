@@ -230,7 +230,8 @@ public class PlayerIncombat : MonoBehaviour
                 }
                 else if ((playerTrans.position.y == roadMiddle || playerTrans.position.y == roadDown) && RollBackTime <= 0) //处于中间or下路，移动
                 {
-                    MoveUP();
+                    playerTrans.DOMoveY(moveDistance, moveTime).SetRelative();
+                    soundManager.Instance.playSFX("jump");
                 }
 
             }
@@ -246,7 +247,8 @@ public class PlayerIncombat : MonoBehaviour
                 }
                 else if ((playerTrans.position.y == roadMiddle || playerTrans.position.y == roadUp) && RollBackTime <= 0) //处于中间or上路，移动
                 {
-                    MoveDown();
+                    playerTrans.DOMoveY(-moveDistance, moveTime).SetRelative();
+                    soundManager.Instance.playSFX("jump");
                 }
             }      
         }
@@ -275,14 +277,14 @@ public class PlayerIncombat : MonoBehaviour
 
     public void MoveUP()
     {
-        playerTrans.DOMoveY(moveDistance, moveTime).SetRelative();
+        playerTrans.DOMoveY(roadUp, moveTime);
         soundManager.Instance.playSFX("jump");
         //soundManager.jumpingSound();
     }
 
     public void MoveDown()
     {
-        playerTrans.DOMoveY(-moveDistance, moveTime).SetRelative();
+        playerTrans.DOMoveY(roadDown, moveTime);
         soundManager.Instance.playSFX("jump");
         //soundManager.jumpingSound();
     }
