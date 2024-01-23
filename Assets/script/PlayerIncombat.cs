@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class PlayerIncombat : MonoBehaviour
 {
+    public int sceneNum;
+
     public GameObject FinalPoint;
     public Transform playerTrans;
     private BoxCollider2D playerCollider;
@@ -131,7 +133,7 @@ public class PlayerIncombat : MonoBehaviour
         if (isChangeToNextScene&&health<=0)
         {
             playerBag.items.Clear();
-            sceneManager.Instance.changeScene(6);
+            sceneManager.Instance.changeScene(sceneNum);
         }
     }
     void TurnColor()
@@ -193,8 +195,10 @@ public class PlayerIncombat : MonoBehaviour
     }
     void Move()
     {
+        Debug.Log("000");
         if (Input.GetKeyDown(KeyCode.W))//按下按键“W”
         {
+            Debug.Log("123");
             if (finishGuide)
             {
                 if (playerTrans.position.y == roadUp)  //处于最高路，不再移动
