@@ -618,6 +618,16 @@ MonoBehaviour:
   obstacleReBound: {fileID: 798950251042913942, guid: 9e353f0b138e39843958c7b27190b449, type: 3}
   MagicBall: {fileID: 3444111837768966762, guid: 88e34c50ad08f674698d0e15811bbe7b, type: 3}
   point: {fileID: 0}
+  changePositionTime: 0
+  moveSpeed: 0
+  position:
+  - {fileID: 1073525035290505934}
+  - {fileID: 1866919990}
+  - {fileID: 1950467582}
+  positionLittleChange:
+  - 0
+  - 0
+  changePosi: 0
 --- !u!212 &243475903
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1045,6 +1055,14 @@ PrefabInstance:
       propertyPath: shortBladeRollBackTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2872108154013665939, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.008700323
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903686622236572219, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.006029521
+      objectReference: {fileID: 0}
     - target: {fileID: 4183094645413440648, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
       propertyPath: m_Name
       value: BattlePlayer
@@ -1065,6 +1083,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000019797085
       objectReference: {fileID: 0}
+    - target: {fileID: 5152403925638042157, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5428871927609026228, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.06092845
@@ -1075,7 +1097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5769956896250051823, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6001852250723360526, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1116,6 +1138,10 @@ PrefabInstance:
     - target: {fileID: 6001852250723360526, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225545212165447766, guid: 4b43c823eb324da499adcbeb44ea416a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.015044255
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
