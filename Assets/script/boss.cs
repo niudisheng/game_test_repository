@@ -122,16 +122,16 @@ public class boss : MonoBehaviour
         {
             if(randomNum<=2&&randomNum>=1)//第一行
             {
-                poolMgr.Instance.getObj("obstacle", position[0]);
+                poolMgr.Instance.getObj("obstacle(1)", position[0]);
             }
             
             if (randomNum <= 5 && randomNum >= 3)//第二行
             {
-                poolMgr.Instance.getObj("obstacle", position[1]);
+                poolMgr.Instance.getObj("obstacle(1)", position[1]);
             }
              if (randomNum >= 6 && randomNum <= 7)//第三行  
             {
-                poolMgr.Instance.getObj("obstacle", position[2]);
+                poolMgr.Instance.getObj("obstacle(1)", position[2]);
             }
             refreshTime = startRefreashTime;
         }

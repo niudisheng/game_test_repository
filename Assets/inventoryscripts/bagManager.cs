@@ -58,8 +58,15 @@ public class bagManager : MonoBehaviour
     }
     public  void refreshItemOnBag()//外部使用道具，则转到bag里，同时改isGet
     {
-        if (playerBag.items.Count <2)
+        if (playerBag.items.Count < 2)
         {
+            if (playerBag.items.Count == 1)
+            {
+                if (playerBag.items[0] == thisItem)
+                {
+                    return;
+                }
+            }
             playerBag.items.Add(thisItem);
             thisItem.isGet = true;
             KeepData.SelectEquipment(thisItem);
@@ -67,8 +74,7 @@ public class bagManager : MonoBehaviour
         else
         {
             clearOutTime.SetActive(true);
-        }
-        
+        }  
     }
     public static void getItem(item thisItem)
     {
