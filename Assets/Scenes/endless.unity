@@ -775,6 +775,7 @@ MonoBehaviour:
   bossAni: {fileID: 521876896}
   isLastOne: 0
   isLastTwe: 0
+  ismirror: 1
 --- !u!4 &243475904
 Transform:
   m_ObjectHideFlags: 0

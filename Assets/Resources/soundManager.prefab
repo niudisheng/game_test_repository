@@ -307,10 +307,24 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: dcebae0c8865e3241b6b19611c71016a, type: 3}
   - name: story1
     clip: {fileID: 8300000, guid: 6c1f1a5e3740c704f93eb565c7566e91, type: 3}
+  - name: story2
+    clip: {fileID: 8300000, guid: ef1716a792fafcd4f87a7e55b55d5c9b, type: 3}
+  - name: story3
+    clip: {fileID: 8300000, guid: d947944c0cd06614d9c57e4e38625d01, type: 3}
+  - name: battleScene1
+    clip: {fileID: 8300000, guid: 344c67f7f2dd12c4eb2ae1cb4274fe71, type: 3}
+  - name: endless
+    clip: {fileID: 8300000, guid: b3c09d802e9c18b4288ddab4cbd01396, type: 3}
   sfxSounds:
   - name: arrow
     clip: {fileID: 8300000, guid: abbd16c895cbf014ca3758368c9ae43f, type: 3}
   - name: jump
     clip: {fileID: 8300000, guid: 750548f93b276f642b1f37757668a688, type: 3}
+  - name: fireBall
+    clip: {fileID: 8300000, guid: ff1c259bd08b36b4d88b3eefa42b346c, type: 3}
+  - name: turn on
+    clip: {fileID: 8300000, guid: 2f5075b07c458a44e9ac0a474a9165b3, type: 3}
+  - name: mirror
+    clip: {fileID: 8300000, guid: 43d60822bd117164ca2a4a46f5158135, type: 3}
   musicSource: {fileID: 1447212077584848492}
   sfxSource: {fileID: 5527119966609640088}
