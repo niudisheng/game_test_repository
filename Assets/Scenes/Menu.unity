@@ -261,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4382471057692715973, guid: acc7d74fc260fcf4c91dab89c693dfb9, type: 3}
       propertyPath: sceneNum
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4382471057692715973, guid: acc7d74fc260fcf4c91dab89c693dfb9, type: 3}
       propertyPath: playerBag
