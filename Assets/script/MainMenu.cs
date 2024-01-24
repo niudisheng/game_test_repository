@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public int sceneNum;
     public bag playerBag;
     private void Start()
     {
@@ -12,7 +13,8 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame()
     {
-        sceneManager.Instance.changeScene(1);
+
+        sceneManager.Instance.changeScene(sceneNum);
     }
 
     public void QuitGame()

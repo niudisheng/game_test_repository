@@ -87,7 +87,7 @@ public class DialogSystem : MonoBehaviour
             
             return updateText();
         }
-        if (Input.GetKeyDown(KeyCode.F)|| Input.GetMouseButtonDown(0))//
+        if (Input.GetKeyDown(KeyCode.F)|| Input.GetMouseButtonDown(0))//Êó±êµã»÷»òF¼ü
         {           
             return updateText();     
         }

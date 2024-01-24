@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BattleScene 2.unity
     guid: 2e9a3aafd5cebf5469e93035fe42b2e9
   - enabled: 1
+    path: Assets/Scenes/story3.unity
+    guid: a20bc3fec7037304ca5555521a350402
+  - enabled: 1
     path: Assets/Scenes/world.unity
     guid: 4e21281beab053e44ba503d3aa99ffab
   - enabled: 1
