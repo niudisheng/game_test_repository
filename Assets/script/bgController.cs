@@ -55,7 +55,7 @@ public class bgController : MonoBehaviour
         //±³¾°ÒÆ¶¯
         if (Time.timeScale != 0) 
         {
-            if (transform.position.x <= 57 - weiyi)
+            if (transform.position.x <= startPosition.x - weiyi)
                 transform.position = startPosition;
             if (Time.timeScale == 1)
             {
