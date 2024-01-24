@@ -407,7 +407,8 @@ public class PlayerIncombat : MonoBehaviour
         for (int i = 0; i < WindNum; i++)
         {
             yield return new WaitForSeconds(0.5f);
-            Instantiate(MagicBal,MagicBallTrans.position, Quaternion.identity);
+            Instantiate(MagicBal,MagicBallTrans.position, Quaternion.identity); 
+            soundManager.Instance.playSFX("fireBall");
         }
     }
     IEnumerator deleteColli()

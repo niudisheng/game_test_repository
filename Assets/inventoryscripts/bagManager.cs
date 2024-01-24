@@ -18,6 +18,7 @@ public class bagManager : MonoBehaviour
     public item thisItem;
     public GameObject reComfine;
     public GameObject[] comfine = new GameObject[2];
+    public GameObject end;
     private void Start()
     {
        
@@ -94,11 +95,8 @@ public class bagManager : MonoBehaviour
         else
         {
             instance.gameObject.SetActive(false);
-            sceneManager.Instance.changeScene(7);
+            instance.end.SetActive(false);
         }
     }
-    public void ToEndlessScene()
-    {
-        sceneManager.Instance.changeScene(7);
-    }
+   
 }

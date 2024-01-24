@@ -29,6 +29,7 @@ public class boss : MonoBehaviour
     public Animator bossAni;
     public bool isLastOne;
     public bool isLastTwe;
+    public bool ismirror;
     //private int lastRandomNum;
     // Start is called before the first frame update
     void Start()
@@ -122,16 +123,45 @@ public class boss : MonoBehaviour
         {
             if(randomNum<=2&&randomNum>=1)//第一行
             {
-                poolMgr.Instance.getObj("obstacle(1)", position[0]);
+                if (ismirror)
+                {
+                    poolMgr.Instance.getObj("obstacle(1)", position[0]);
+                }
+                else
+                {
+                    poolMgr.Instance.getObj("obstacle", position[0]);
+                   soundManager.Instance.playSFX("arrow");
+                }
+               
             }
             
             if (randomNum <= 5 && randomNum >= 3)//第二行
             {
-                poolMgr.Instance.getObj("obstacle(1)", position[1]);
+                if (ismirror)
+                {
+                    poolMgr.Instance.getObj("obstacle(1)", position[1]);
+  
+                }
+                else
+                {
+                    poolMgr.Instance.getObj("obstacle", position[1]);
+                    soundManager.Instance.playSFX("arrow");
+
+                }
             }
              if (randomNum >= 6 && randomNum <= 7)//第三行  
             {
-                poolMgr.Instance.getObj("obstacle(1)", position[2]);
+                if (ismirror)
+                {
+                    poolMgr.Instance.getObj("obstacle(1)", position[2]);
+                    print("jdkflas");
+               
+                }
+                else
+                {
+                    poolMgr.Instance.getObj("obstacle", position[2]);
+                    soundManager.Instance.playSFX("arrow");
+                }
             }
             refreshTime = startRefreashTime;
         }
