@@ -14,7 +14,7 @@ public class bgController : MonoBehaviour
     void Start()
     {
         isOpen = false;
-    startPosition = transform.position;
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class bgController : MonoBehaviour
        
 
         //±³¾°ÒÆ¶¯
-        if (transform.position.x <= -182+weiyi)
+        if (transform.position.x <= 57-weiyi)
             transform.position = startPosition;
         transform.Translate(-speed, 0, 0);
     }
