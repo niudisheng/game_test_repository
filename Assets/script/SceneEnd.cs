@@ -17,7 +17,8 @@ public class SceneEnd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        endPanel.fillAmount += 1f / endTime * Time.deltaTime;
+        //endPanel.fillAmount += 1f / endTime * Time.deltaTime;
+        endPanel.fillAmount = 1;
         if (endPanel.fillAmount >= 1 )
         {
             sceneManager.Instance.changeScene(sceneNum);
