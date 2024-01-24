@@ -7003,6 +7003,10 @@ PrefabInstance:
       propertyPath: sign
       value: 
       objectReference: {fileID: 1491018856}
+    - target: {fileID: 5197310404835400528, guid: dceab2f15bac9084c8e790911d31e297, type: 3}
+      propertyPath: move_speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5581002425849034335, guid: dceab2f15bac9084c8e790911d31e297, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.006029479

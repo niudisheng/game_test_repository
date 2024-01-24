@@ -322,7 +322,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -87, y: -5.9, z: -3}
-  m_LocalScale: {x: 318.32, y: 144.69092, z: 144.69092}
+  m_LocalScale: {x: 318.32, y: 150.979, z: 144.69092}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1029397345}
@@ -368,7 +368,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9ea68247e67827d40bd9d78b0548f578, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 170a4155abdaaf74bbb4076afba83a24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -788,6 +788,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2038166434}
   - {fileID: 1719624830}
   - {fileID: 521876895}
   m_Father: {fileID: 174940686}
@@ -1981,7 +1982,7 @@ Transform:
   m_GameObject: {fileID: 878489108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54561, y: 25, z: -2.9999595}
+  m_LocalPosition: {x: 54561, y: -5.9, z: -2.9999595}
   m_LocalScale: {x: 316.3369, y: 150.97905, z: 143.78932}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2028,7 +2029,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9ea68247e67827d40bd9d78b0548f578, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 170a4155abdaaf74bbb4076afba83a24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2519,8 +2520,8 @@ Transform:
   m_GameObject: {fileID: 1233692106}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18180, y: 6, z: -3}
-  m_LocalScale: {x: 316.337, y: 149.18164, z: 143.78954}
+  m_LocalPosition: {x: 18180, y: -5.9, z: -3}
+  m_LocalScale: {x: 316.337, y: 150.979, z: 143.78954}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1029397345}
@@ -2566,7 +2567,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9ea68247e67827d40bd9d78b0548f578, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 170a4155abdaaf74bbb4076afba83a24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2603,7 +2604,7 @@ Transform:
   m_GameObject: {fileID: 1253379224}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36365, y: 19, z: -2.9999595}
+  m_LocalPosition: {x: 36365, y: -5.9, z: -2.9999595}
   m_LocalScale: {x: 316.3369, y: 150.97905, z: 143.78932}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2650,7 +2651,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9ea68247e67827d40bd9d78b0548f578, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 170a4155abdaaf74bbb4076afba83a24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3769,6 +3770,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2038166433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2038166434}
+  m_Layer: 0
+  m_Name: position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2038166434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038166433}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 243475904}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2069752544
 GameObject:

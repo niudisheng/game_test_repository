@@ -459,6 +459,9 @@ MonoBehaviour:
   changePosi: 0
   isChangeObstacleSpeed: 0
   leftSpeed: 10
+  bossAni: {fileID: 0}
+  isLastOne: 0
+  isLastTwe: 0
 --- !u!4 &243475904
 Transform:
   m_ObjectHideFlags: 0
@@ -1352,8 +1355,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -278, y: -238}
-  m_SizeDelta: {x: 835.6333, y: 152.5706}
+  m_AnchoredPosition: {x: -107.42972, y: -307.68634}
+  m_SizeDelta: {x: 1176.7739, y: 338.4156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &988473122
 MonoBehaviour:
@@ -1382,13 +1385,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 129
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6309\u4E0B\u201CW\u201D\u6216\u201CS\u201D\u8FDB\u884C\u8EB2\u907F"
+  m_Text: "\u6309\u4E0B\u201CW\u201D\u6216\u201CS\u201D\n\u8FDB\u884C\u8EB2\u907F"
 --- !u!222 &988473123
 CanvasRenderer:
   m_ObjectHideFlags: 0

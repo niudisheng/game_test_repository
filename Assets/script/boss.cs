@@ -19,7 +19,7 @@ public class boss : MonoBehaviour
     private int randomNumForPosit;
     private float StartChangePositionTime;
     public float moveSpeed;
-    public Transform[] position = new Transform[4];
+    public Transform[] position = new Transform[3];
     private Vector2 nowPosition;
     public float[] positionLittleChange = new float[3];
     public bool isChangeFlashTime;
@@ -108,7 +108,11 @@ public class boss : MonoBehaviour
             }
             changePositionTime = StartChangePositionTime;
         }
-        transform.position = Vector2.MoveTowards(transform.position,new Vector2(this.transform.position.x,nowPosition.y), moveSpeed);
+        if (Time.timeScale != 0)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(this.transform.position.x, nowPosition.y), moveSpeed);
+        }
+       
     }
     void ObstacRefresh()
     {
