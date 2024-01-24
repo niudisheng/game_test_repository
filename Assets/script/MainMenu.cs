@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public int sceneNum;
+    public GameObject endPanel;
     public bag playerBag;
     private void Start()
     {
@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
 
-        sceneManager.Instance.changeScene(sceneNum);
+        endPanel.SetActive(true);
     }
 
     public void QuitGame()

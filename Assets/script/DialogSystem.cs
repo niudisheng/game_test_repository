@@ -34,6 +34,7 @@ public class DialogSystem : MonoBehaviour
     public float move_time =0.5f;
 
     [Header("移动到哪个场景")]
+    public GameObject end;
     public int sceneNum ;
     public GameObject role_choose_ui;
 
@@ -152,7 +153,8 @@ public class DialogSystem : MonoBehaviour
                 if (content == "跳转")
                 {   
                     closeUi();
-                    sceneManager.Instance.changeScene(instance.sceneNum);
+                    instance.end.SetActive(true);
+                    //sceneManager.Instance.changeScene(instance.sceneNum);
                 }
                 if (content == "选择角色")
                 {

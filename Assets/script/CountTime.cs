@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CountTime : MonoBehaviour
 {
     public float playTime;
-    public int sceneNum;
+    public GameObject endPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,8 @@ public class CountTime : MonoBehaviour
         playTime -= Time.deltaTime;
         if (playTime < 0 )
         {
-            sceneManager.Instance.changeScene(sceneNum);
+            endPanel.SetActive( true );
+            
         }
     }
 }
