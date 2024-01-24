@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class InitButton : MonoBehaviour
 {
     private GameObject lastSelect;
+    
 
     // Start is called before the first frame update
     void Start()
