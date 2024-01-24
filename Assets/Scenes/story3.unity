@@ -432,6 +432,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 16316367
       objectReference: {fileID: 0}
+    - target: {fileID: 4124280391287885152, guid: 5fbad9fd10b91a746837fb2d98cb2ca3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 73b948a488509d94cbee8e58415d6d5b, type: 2}
     - target: {fileID: 4474096313561674396, guid: 5fbad9fd10b91a746837fb2d98cb2ca3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 78.9
@@ -835,7 +839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &608334261
 RectTransform:
   m_ObjectHideFlags: 0
