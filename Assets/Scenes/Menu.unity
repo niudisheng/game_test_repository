@@ -622,7 +622,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
       propertyPath: sfxSounds.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
       propertyPath: musicSound.Array.size
@@ -643,6 +643,14 @@ PrefabInstance:
     - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
       propertyPath: sfxSounds.Array.data[3].name
       value: turn on
+      objectReference: {fileID: 0}
+    - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
+      propertyPath: sfxSounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 43d60822bd117164ca2a4a46f5158135, type: 3}
+    - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
+      propertyPath: sfxSounds.Array.data[4].name
+      value: mirror
       objectReference: {fileID: 0}
     - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
       propertyPath: musicSound.Array.data[0].clip
