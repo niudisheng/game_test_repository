@@ -13,7 +13,7 @@ public class scene0process : MonoBehaviour
     public string BGM;
     private void Start()
     {
-        //soundManager.Instance.playMusic(BGM);
+        soundManager.Instance.playMusic(BGM);
         StartTimer();
     }
 

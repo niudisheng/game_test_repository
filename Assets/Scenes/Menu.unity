@@ -620,6 +620,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
+      propertyPath: musicSound.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
+      propertyPath: musicSound.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 26ccda8453d750e408699830301e972a, type: 3}
+    - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
+      propertyPath: musicSound.Array.data[6].name
+      value: world
+      objectReference: {fileID: 0}
     - target: {fileID: 7764227030627725415, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
       propertyPath: m_LocalPosition.x
       value: 960
