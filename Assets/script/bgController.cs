@@ -59,6 +59,7 @@ public class bgController : MonoBehaviour
                 transform.position = startPosition;
             if (Time.timeScale == 1)
             {
+                print("djkslaf");
                 transform.Translate(-speed, 0, 0);
             }
             if (Time.timeScale == 0.3f)

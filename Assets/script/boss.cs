@@ -40,7 +40,6 @@ public class boss : MonoBehaviour
         ObstacRefresh();
         ChangePositionTime();
         IsChangeFlashTime();
-        print(startRefreashTime);
         IsChangeObstacleSpeed();
        
     }
@@ -50,7 +49,7 @@ public class boss : MonoBehaviour
         {
             leftSpeed += (Time.deltaTime * 0.03f);
         }
-        print(leftSpeed);
+
     }
    void IsChangeFlashTime()
     {
