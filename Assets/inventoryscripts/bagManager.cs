@@ -88,11 +88,11 @@ public class bagManager : MonoBehaviour
         else
         {
             instance.gameObject.SetActive(false);
-            sceneManager.Instance.changeScene(5);
+            sceneManager.Instance.changeScene(7);
         }
     }
     public void ToEndlessScene()
     {
-        sceneManager.Instance.changeScene(6);
+        sceneManager.Instance.changeScene(7);
     }
 }
