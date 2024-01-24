@@ -406,7 +406,7 @@ public class PlayerIncombat : MonoBehaviour
     {
         for (int i = 0; i < WindNum; i++)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
             Instantiate(MagicBal,MagicBallTrans.position, Quaternion.identity);
         }
     }

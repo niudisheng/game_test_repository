@@ -26,6 +26,9 @@ public class boss : MonoBehaviour
     public bool changePosi;   
     public bool isChangeObstacleSpeed;
     public float leftSpeed;
+    public Animator bossAni;
+    public bool isLastOne;
+    public bool isLastTwe;
     //private int lastRandomNum;
     // Start is called before the first frame update
     void Start()
@@ -68,14 +71,40 @@ public class boss : MonoBehaviour
             if (randomNumForPosit == 1)
             {
                 nowPosition = new Vector2(transform.position.x , position[randomNumForPosit - 1].position.y - positionLittleChange[0]);
+                if (!isLastOne)
+                {
+                  bossAni.SetTrigger("isUp 0");
+                }
+                isLastTwe = false;
+                isLastOne = true;
             }
             if (randomNumForPosit == 2)
             {
                 nowPosition = new Vector2(transform.position.x , position[randomNumForPosit - 1].position.y);
+              
+            
+                if(!isLastTwe)
+                {
+                    if (isLastOne)
+                    {
+                        bossAni.SetTrigger("isDown 0");
+                    }
+                    else
+                    {
+                        bossAni.SetTrigger("isUp 0");
+                    }
+                }
+              isLastTwe = true;
             }
             if (randomNumForPosit == 3)
             {
                 nowPosition = new Vector2(transform.position.x, position[randomNumForPosit - 1].position.y + positionLittleChange[1]);
+                if (isLastOne || isLastTwe)
+                {
+                    bossAni.SetTrigger("isDown 0");
+                }
+                isLastOne = false;
+                isLastTwe = false;
             }
             changePositionTime = StartChangePositionTime;
         }

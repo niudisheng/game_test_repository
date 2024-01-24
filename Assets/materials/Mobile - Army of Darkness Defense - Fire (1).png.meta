@@ -127,11 +127,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 63
-        width: 31.5
-        height: 63
+        y: 94.5
+        width: 63
+        height: 31.5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Mobile - Army of Darkness Defense - Fire (1)_1
       rect:
         serializedVersion: 2
-        x: 31
-        y: 63
-        width: 31.5
-        height: 63
+        x: 63
+        y: 94.5
+        width: 63
+        height: 31.5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: Mobile - Army of Darkness Defense - Fire (1)_2
       rect:
         serializedVersion: 2
-        x: 62
-        y: 63
-        width: 31.5
-        height: 63
+        x: 0
+        y: 63.5
+        width: 63
+        height: 31.5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: Mobile - Army of Darkness Defense - Fire (1)_3
       rect:
         serializedVersion: 2
-        x: 93
-        y: 63
-        width: 31.5
-        height: 63
+        x: 63
+        y: 63.5
+        width: 63
+        height: 31.5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -211,11 +211,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 31.5
-        height: 63
+        y: 32.5
+        width: 63
+        height: 31.5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: Mobile - Army of Darkness Defense - Fire (1)_5
       rect:
         serializedVersion: 2
-        x: 31
-        y: 0
-        width: 31.5
-        height: 63
+        x: 63
+        y: 32.5
+        width: 63
+        height: 31.5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: Mobile - Army of Darkness Defense - Fire (1)_6
       rect:
         serializedVersion: 2
-        x: 62
-        y: 0
-        width: 31.5
-        height: 63
+        x: 0
+        y: 1.5
+        width: 63
+        height: 31.5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,12 +273,12 @@ TextureImporter:
       name: Mobile - Army of Darkness Defense - Fire (1)_7
       rect:
         serializedVersion: 2
-        x: 93
-        y: 0
-        width: 31.5
-        height: 63
+        x: 63
+        y: 1.5
+        width: 63
+        height: 31.5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

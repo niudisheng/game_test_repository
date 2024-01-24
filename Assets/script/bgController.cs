@@ -22,31 +22,35 @@ public class bgController : MonoBehaviour
     void Update()
     {
         print(isOpen);
-        
+
         //暂停界面的控制
-        if (Player.GetComponent<PlayerIncombat>().finishGuide == true)
+        if (Player != null)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Player.GetComponent<PlayerIncombat>().finishGuide == true)
             {
-                isOpen = !isOpen;
-                if (isOpen)
+                if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    StopMenu.SetActive(isOpen);
-                    Time.timeScale = 0;
+                    isOpen = !isOpen;
+                    if (isOpen)
+                    {
+                        StopMenu.SetActive(isOpen);
+                        Time.timeScale = 0;
+                    }
+                    else
+                    {
+                        StopMenu.SetActive(isOpen);
+                        Time.timeScale = 1;
+                    }
+
                 }
-                else
+                if (StopMenu.activeSelf != isOpen)
                 {
-                    StopMenu.SetActive(isOpen);
+                    isOpen = !isOpen;
                     Time.timeScale = 1;
                 }
-
-            }
-            if (StopMenu.activeSelf != isOpen)
-            {
-                isOpen = !isOpen;
-                Time.timeScale = 1;
             }
         }
+  
         
         
 
