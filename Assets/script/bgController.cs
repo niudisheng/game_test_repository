@@ -10,6 +10,7 @@ public class bgController : MonoBehaviour
     public float speed;
     private Vector3 startPosition;
     private bool isOpen;
+    public GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,32 +24,49 @@ public class bgController : MonoBehaviour
         print(isOpen);
         
         //暂停界面的控制
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Player.GetComponent<PlayerIncombat>().finishGuide == true)
         {
-            isOpen = !isOpen;  
-            if (isOpen)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                StopMenu.SetActive(isOpen);
-                Time.timeScale = 0;
+                isOpen = !isOpen;
+                if (isOpen)
+                {
+                    StopMenu.SetActive(isOpen);
+                    Time.timeScale = 0;
+                }
+                else
+                {
+                    StopMenu.SetActive(isOpen);
+                    Time.timeScale = 1;
+                }
+
             }
-            else
+            if (StopMenu.activeSelf != isOpen)
             {
-                StopMenu.SetActive(isOpen);
-                Time.timeScale = 1;  
-            }  
-              
-        } 
-        if (StopMenu.activeSelf != isOpen)
-        {
-            isOpen = !isOpen;
-            Time.timeScale = 1;
+                isOpen = !isOpen;
+                Time.timeScale = 1;
+            }
         }
-     
-       
+        
+        
+
+
 
         //背景移动
-        if (transform.position.x <= 57-weiyi)
-            transform.position = startPosition;
-        transform.Translate(-speed, 0, 0);
+        if (Time.timeScale != 0) 
+        {
+            if (transform.position.x <= 57 - weiyi)
+                transform.position = startPosition;
+            if (Time.timeScale == 1)
+            {
+                transform.Translate(-speed, 0, 0);
+            }
+            if (Time.timeScale == 0.3f)
+            {
+                transform.Translate(-speed*0.3f, 0, 0);
+            }
+
+        }
+        
     }
 }

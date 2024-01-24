@@ -28,7 +28,7 @@ public class PlayerIncombat : MonoBehaviour
     public int health;
 
     public float moveTime;               //设置移动时间
-    public float moveDistance;           //设置移动距离
+    //public float moveDistance;           //设置移动距离
     public float invincibleTime;         //设置无敌时间
     private float startInvincibleTime;                                     //
 
@@ -206,9 +206,15 @@ public class PlayerIncombat : MonoBehaviour
                 {
                     return;
                 }
-                else if ((playerTrans.position.y == roadMiddle || playerTrans.position.y == roadDown) && RollBackTime <= 0) //处于中间or下路，移动
+                else if (playerTrans.position.y == roadMiddle && RollBackTime <= 0) //处于中间or下路，移动
                 {
-                    MoveUP();
+                    playerTrans.DOMoveY(roadUp, moveTime);
+                    soundManager.Instance.playSFX("jump");
+                }
+                else if (playerTrans.position.y == roadDown && RollBackTime <= 0) //处于中间or下路，移动
+                {
+                    playerTrans.DOMoveY(roadMiddle, moveTime);
+                    soundManager.Instance.playSFX("jump");
                 }
 
             }
@@ -222,9 +228,15 @@ public class PlayerIncombat : MonoBehaviour
                 {
                     return;
                 }
-                else if ((playerTrans.position.y == roadMiddle || playerTrans.position.y == roadUp) && RollBackTime <= 0) //处于中间or上路，移动
+                else if (playerTrans.position.y == roadMiddle && RollBackTime <= 0) //处于中间or上路，移动
                 {
-                    MoveDown();
+                    playerTrans.DOMoveY(roadDown, moveTime);
+                    soundManager.Instance.playSFX("jump");
+                }
+                else if (playerTrans.position.y == roadUp && RollBackTime <= 0) //处于中间or上路，移动
+                {
+                    playerTrans.DOMoveY(roadMiddle, moveTime);
+                    soundManager.Instance.playSFX("jump");
                 }
             }      
         }
@@ -253,14 +265,14 @@ public class PlayerIncombat : MonoBehaviour
 
     public void MoveUP()
     {
-        playerTrans.DOMoveY(moveDistance, moveTime).SetRelative();
+        playerTrans.DOMoveY(roadUp, moveTime);
         soundManager.Instance.playSFX("jump");
         //soundManager.jumpingSound();
     }
 
     public void MoveDown()
     {
-        playerTrans.DOMoveY(-moveDistance, moveTime).SetRelative();
+        playerTrans.DOMoveY(roadDown, moveTime);
         soundManager.Instance.playSFX("jump");
         //soundManager.jumpingSound();
     }
