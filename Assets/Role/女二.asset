@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d09f7a9829a5a4aa98e21f7cd77eee, type: 3}
   m_Name: "\u5973\u4E8C"
   m_EditorClassIdentifier: 
-  RokeIsUse: 1
+  RokeIsUse: 0
   RoleSkill: "\u5973\u4E8C"

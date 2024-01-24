@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
-using Unity.VisualScripting;
+
 
 public class PlayerIncombat : MonoBehaviour
 {
@@ -22,6 +22,7 @@ public class PlayerIncombat : MonoBehaviour
     public boss boss;
     public point point;
     public bool finishGuide;
+    
 
     public int maxHealth;                //设置最大生命值
     public int health;
@@ -56,10 +57,6 @@ public class PlayerIncombat : MonoBehaviour
     public float reBoundTime;//反弹持续时间
     public float ShortBladeTime;//短刃效果持续时间
 
-    public Role role1;//两个角色
-    public Role role2;
-    public GameObject[] roles = new GameObject[2];
-
     public Image skillCD_One;
     public Image skillCD_Two;
 
@@ -76,14 +73,12 @@ public class PlayerIncombat : MonoBehaviour
     public bool CanReBound;
     public bool haveShortBlade;
     public bool haveFinalJudgement;
-    public bool isChangeRole;//是否改变角色
 
     private bool isUseShield;
     private bool isUseWand;
     private bool isUseReBound;
     private bool isUseShortBlade;
     private bool isUseFinalJudgement;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -132,23 +127,6 @@ public class PlayerIncombat : MonoBehaviour
         // Debug.Log(isUseShortBlade);
         // Debug.Log(isUseWand);
         IsChangeToNextScene();
-        IsChangeRole();
-    }
-   void IsChangeRole()
-    {
-        if (isChangeRole)
-        {
-             if (role1.RokeIsUse)
-            {
-                roles[0].gameObject.SetActive(true);
-                roles[1].gameObject.SetActive(false);
-            }
-             else if (role2.RokeIsUse)
-            {
-                roles[0].gameObject.SetActive(false);
-                roles[1].gameObject.SetActive(true);
-            }
-        }
     }
 
     void IsChangeToNextScene()

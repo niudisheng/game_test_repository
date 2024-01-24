@@ -292,7 +292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5019e9a76f51f459696de1a1161d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNum: 0
   FinalPoint: {fileID: 0}
   playerTrans: {fileID: 4496512335518677896}
   playerBag: {fileID: 11400000, guid: 11b7870e5b3a3304b99b8c10775b30d9, type: 2}

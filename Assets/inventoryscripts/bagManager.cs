@@ -18,7 +18,6 @@ public class bagManager : MonoBehaviour
     public item thisItem;
     public GameObject reComfine;
     public GameObject[] comfine = new GameObject[2];
-    public GameObject isHaveChooseItem;
     private void Start()
     {
        
@@ -59,23 +58,15 @@ public class bagManager : MonoBehaviour
     }
     public  void refreshItemOnBag()//外部使用道具，则转到bag里，同时改isGet
     {
-        if (thisItem == null)
+        if (playerBag.items.Count <2)
         {
-            isHaveChooseItem.gameObject.SetActive(true);
+            playerBag.items.Add(thisItem);
+            thisItem.isGet = true;
+            KeepData.SelectEquipment(thisItem);
         }
-        else if (thisItem != null)
+        else
         {
-
-            if (playerBag.items.Count < 2)
-            {
-                playerBag.items.Add(thisItem);
-                thisItem.isGet = true;
-                KeepData.SelectEquipment(thisItem);
-            }
-            else
-            {
-                clearOutTime.SetActive(true);
-            }
+            clearOutTime.SetActive(true);
         }
         
     }

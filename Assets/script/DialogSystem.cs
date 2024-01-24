@@ -24,12 +24,13 @@ public class DialogSystem : MonoBehaviour
     [Header("图片资源")]
     public GameObject heroine;
     public GameObject female_2;
+    public GameObject mouse;
     Dictionary<string,GameObject> GameObject_dic = new Dictionary<string, GameObject>();
 
     [Header("立绘移动参数")]
-    private float left=-3179;
-    private float middle=-1700;
-    private float right=147;
+    private float left=-4200;
+    private float right=433;
+    private float middle=-1300;
     public float move_time =0.5f;
 
     [Header("移动到哪个场景")]
@@ -65,12 +66,13 @@ public class DialogSystem : MonoBehaviour
     {
         instance.heroine.SetActive(false);
         instance.female_2.SetActive(false);
+        instance.mouse.SetActive(false);
         instance.talk_ui.SetActive(false);
         
         instance.max_index = GetText(textFile) - 1;
         instance.index = -1;
     }
-    // Update is called once per frame
+    
     void Update()
     {   
        
@@ -85,7 +87,7 @@ public class DialogSystem : MonoBehaviour
             
             return updateText();
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F)|| Input.GetMouseButtonDown(0))//
         {           
             return updateText();     
         }
@@ -101,10 +103,9 @@ public class DialogSystem : MonoBehaviour
             return;
         }
         GameObject ga = instance.GameObject_dic[sign];
-        Transform tran = ga.transform;
-        Sprite sprite = ga.GetComponent<Sprite>();
+        RectTransform rectTransform = ga.GetComponent<RectTransform>();
         float x_coordinate=instance.middle;
-        //string m = "m1";
+        
         if (pos == 'm')
         {
             x_coordinate = instance.middle;
@@ -121,11 +122,12 @@ public class DialogSystem : MonoBehaviour
         if (!ga.activeSelf)
         {
             ga.SetActive(true);
-            //tran.localPosition = new Vector3(x_coordinate, tran.localPosition.y, tran.localPosition.z);
-            tran.localPosition = new Vector3(x_coordinate, 700, tran.localPosition.z);
+            rectTransform.localPosition = new Vector3(x_coordinate, rectTransform.localPosition.y, rectTransform.localPosition.z);
+            
         }
-        if (tran.localPosition.x != x_coordinate)
-        tran.DOLocalMoveX(x_coordinate, instance.move_time);
+        if (rectTransform.localPosition.x != x_coordinate)
+            rectTransform.DOLocalMoveX(x_coordinate,instance.move_time);
+        //tran.DOLocalMoveX(x_coordinate, instance.move_time);
 
     }
     static public void closeUi() 
@@ -168,6 +170,7 @@ public class DialogSystem : MonoBehaviour
                 image_update(image_pos);
                 instance.text_display = instance.StartCoroutine(instance.setTextUI(content)); 
                 instance.text_finished = false;
+                instance.mouse.SetActive(false);
             }
             else //文本没结束的时候再按R
             {
@@ -176,6 +179,7 @@ public class DialogSystem : MonoBehaviour
                 string content = instance.text_list[instance.index];
                 instance.textLabel.text = content;
                 instance.text_finished = true;
+                instance.mouse.SetActive(true);
             }
             return true;
         }
@@ -223,6 +227,7 @@ public class DialogSystem : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
         text_finished=true;
+        mouse.SetActive(true);
         
 
     }
