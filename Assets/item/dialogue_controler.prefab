@@ -24,7 +24,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6846338328789795334}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33,7 +33,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 960, y: 540}
+  m_AnchoredPosition: {x: 960.0001, y: 539.99994}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3204766640537358780
@@ -50,7 +50,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talk_ui: {fileID: 0}
   textLabel: {fileID: 0}
-  textFile: {fileID: 4900000, guid: 5c30ba3ae53d6d740a4b60e7d8f6959e, type: 3}
+  name_text: {fileID: 0}
+  textFile: {fileID: 4900000, guid: de0b6f1507ae54542b6526643aa40067, type: 3}
   index: 0
   max_index: 0
   textSpeed: 0.1
+  heroine: {fileID: 0}
+  female_2: {fileID: 0}
+  mouse: {fileID: 0}
+  move_time: 0.5
+  sceneNum: 2
+  role_choose_ui: {fileID: 0}
