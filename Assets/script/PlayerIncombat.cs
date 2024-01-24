@@ -72,13 +72,19 @@ public class PlayerIncombat : MonoBehaviour
     public bool haveWand;
     public bool CanReBound;
     public bool haveShortBlade;
-    public bool haveFinalJudgement;
+    public bool haveFinalJudgement; 
+
+    public bool isChangeRoles;
+    public Role role1;
+    public Role role2;
+    public GameObject[] roles = new GameObject[2];
 
     private bool isUseShield;
     private bool isUseWand;
     private bool isUseReBound;
     private bool isUseShortBlade;
     private bool isUseFinalJudgement;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -127,8 +133,25 @@ public class PlayerIncombat : MonoBehaviour
         // Debug.Log(isUseShortBlade);
         // Debug.Log(isUseWand);
         IsChangeToNextScene();
+        IsChangeRoles();
     }
 
+   void IsChangeRoles()
+    {
+        if (isChangeRoles)
+        {
+           if (role1.RokeIsUse)
+            {
+                roles[0].gameObject.SetActive(true);
+                roles[1].gameObject.SetActive(false);
+            }
+            if (role2.RokeIsUse)
+            {
+                roles[0].gameObject.SetActive(false);
+                roles[1].gameObject.SetActive(true);
+            }
+        }
+    }
     void IsChangeToNextScene()
     {
         if (isChangeToNextScene&&health<=0)
@@ -383,7 +406,7 @@ public class PlayerIncombat : MonoBehaviour
     {
         for (int i = 0; i < WindNum; i++)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
             Instantiate(MagicBal,MagicBallTrans.position, Quaternion.identity);
         }
     }
