@@ -17,7 +17,7 @@ public class finalPoint : MonoBehaviour
     }
     public void Back()
     {
-        sceneManager.Instance.changeScene(5);
+        sceneManager.Instance.changeScene(6);
     }
     public void reTry()
     {
