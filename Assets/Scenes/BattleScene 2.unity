@@ -2886,7 +2886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StopMenu: {fileID: 563507427}
   weiyi: 191.1
-  speed: 0.15
+  speed: 0.08
   Player: {fileID: 515375858}
 --- !u!212 &1550222677
 SpriteRenderer:
