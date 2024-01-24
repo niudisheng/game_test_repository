@@ -28,9 +28,9 @@ public class DialogSystem : MonoBehaviour
     Dictionary<string,GameObject> GameObject_dic = new Dictionary<string, GameObject>();
 
     [Header("立绘移动参数")]
-    private float left=-4200;
-    private float right=433;
-    private float middle=-1300;
+    private float left=-4300;
+    private float right=500;
+    private float middle=-1500;
     public float move_time =0.5f;
 
     [Header("移动到哪个场景")]
