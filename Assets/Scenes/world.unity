@@ -4993,6 +4993,11 @@ MonoBehaviour:
   RemindPanel: {fileID: 1711510573}
   ChooseItem: {fileID: 1356418654}
   playerBag: {fileID: 11400000, guid: 11b7870e5b3a3304b99b8c10775b30d9, type: 2}
+--- !u!1 &1491018856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8119533596155904016, guid: dceab2f15bac9084c8e790911d31e297, type: 3}
+  m_PrefabInstance: {fileID: 7140925787763893114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1530417389
 GameObject:
   m_ObjectHideFlags: 0
@@ -6994,6 +6999,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5197310404835400528, guid: dceab2f15bac9084c8e790911d31e297, type: 3}
+      propertyPath: sign
+      value: 
+      objectReference: {fileID: 1491018856}
     - target: {fileID: 5581002425849034335, guid: dceab2f15bac9084c8e790911d31e297, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.006029479
