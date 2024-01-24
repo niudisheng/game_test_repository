@@ -517,8 +517,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
+      propertyPath: sfxSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
       propertyPath: musicSound.Array.size
-      value: 8
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
+      propertyPath: sfxSounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ff1c259bd08b36b4d88b3eefa42b346c, type: 3}
+    - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
+      propertyPath: sfxSounds.Array.data[2].name
+      value: fireBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
+      propertyPath: sfxSounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f5075b07c458a44e9ac0a474a9165b3, type: 3}
+    - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
+      propertyPath: sfxSounds.Array.data[3].name
+      value: turn on
       objectReference: {fileID: 0}
     - target: {fileID: 37472264063233630, guid: b09ae69c18928e644a67b35b0692c471, type: 3}
       propertyPath: musicSound.Array.data[0].clip
