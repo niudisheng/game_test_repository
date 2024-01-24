@@ -46,7 +46,7 @@ public class boss : MonoBehaviour
     }
     void IsChangeObstacleSpeed()
     {
-        if (isChangeObstacleSpeed && leftSpeed <= 20)
+        if (isChangeObstacleSpeed && leftSpeed <= 17)
         {
             leftSpeed += (Time.deltaTime * 0.03f);
         }
