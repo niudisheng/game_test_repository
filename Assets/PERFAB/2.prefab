@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5477847909470566367}
   - component: {fileID: 3068363844407725551}
   - component: {fileID: 89399452845743282}
-  - component: {fileID: 2832461668467958162}
+  - component: {fileID: 4124280391287885152}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.1, y: -10.3, z: -0.28849366}
-  m_LocalScale: {x: 0.58458, y: 0.58458, z: 0.58458}
+  m_LocalScale: {x: 0.09116011, y: 0.09116011, z: 0.09116011}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5575413561649386382}
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_SolverEditorData:
   - color: {r: 0, g: 1, b: 0, a: 1}
     showGizmo: 1
---- !u!95 &2832461668467958162
+--- !u!95 &4124280391287885152
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
