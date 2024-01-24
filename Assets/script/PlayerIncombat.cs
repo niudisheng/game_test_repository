@@ -432,7 +432,7 @@ public class PlayerIncombat : MonoBehaviour
     }
     IEnumerator deleteLighting()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(1.2f);
         LightTingsprite.enabled = false;
     }
     //下面写各个道具bool值的解锁
