@@ -16,8 +16,13 @@ public class poolMgr: baseNomonoManager<poolMgr>
             Debug.Log(name);
             Debug.Log(poolDic.Count);
             Obj = poolDic[name].Pop();//拉出对象出来
-            Obj.SetActive(true);//激活对象
-            Obj.transform.position = Position.position;
+            if (Obj != null)
+            {
+                 Obj.SetActive(true);//激活对象
+                 Obj.transform.position = Position.position;
+            }
+           
+           
         }
         else//没有抽屉或者抽屉里没对象则创建对象
         {
