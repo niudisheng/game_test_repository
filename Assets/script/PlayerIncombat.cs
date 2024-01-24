@@ -22,6 +22,7 @@ public class PlayerIncombat : MonoBehaviour
     public boss boss;
     public point point;
     public bool finishGuide;
+    
 
     public int maxHealth;                //设置最大生命值
     public int health;
