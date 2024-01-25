@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public bag playerBag;
     private void Start()
     {
-        soundManager.Instance.playMusic("theme");
+        
     }
     public void PlayGame()
     {

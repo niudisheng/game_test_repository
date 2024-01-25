@@ -10,9 +10,6 @@ public class sceneManager : baseNomonoManager<sceneManager>
     public void changeScene(int sceneNum)
     {
         soundManager.stopMusic();
-        //GameObject soundManager_prefab = Resources.Load<GameObject>(instance.prefabDirectory);
-        //GameObject soundManager_instance = Object.Instantiate(soundManager_prefab);
-        //GameObject instantiatedPrefab = Object.Instantiate(soundManager_instance);
         SceneManager.LoadScene(sceneNum,LoadSceneMode.Single);
     }
     public void reTry()//ÖØ¿ª
