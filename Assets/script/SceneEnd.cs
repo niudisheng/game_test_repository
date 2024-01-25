@@ -22,9 +22,6 @@ public class SceneEnd : MonoBehaviour
 =======
         endPanel.fillAmount += 1f / endTime * Time.deltaTime;
 <<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of ed29f3fb (1)
-=======
 >>>>>>> parent of ed29f3fb (1)
 =======
 >>>>>>> parent of ed29f3fb (1)
