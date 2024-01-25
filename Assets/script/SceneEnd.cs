@@ -18,6 +18,7 @@ public class SceneEnd : MonoBehaviour
     void Update()
     {
         endPanel.fillAmount += 1f / endTime * Time.deltaTime;
+        endPanel.fillAmount += 1f / endTime * Time.deltaTime;
         if (endPanel.fillAmount >= 1 )
         {
             sceneManager.Instance.changeScene(sceneNum);
