@@ -18,6 +18,12 @@ public class SceneEnd : MonoBehaviour
     void Update()
     {
         endPanel.fillAmount = 1;
+<<<<<<< HEAD
+=======
+=======
+        endPanel.fillAmount += 1f / endTime * Time.deltaTime;
+>>>>>>> parent of ed29f3fb (1)
+>>>>>>> parent of fb5454e9 (1)
         if (endPanel.fillAmount >= 1 )
         {
             sceneManager.Instance.changeScene(sceneNum);
