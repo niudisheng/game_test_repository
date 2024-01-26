@@ -14,6 +14,7 @@ public class sceneManager : baseNomonoManager<sceneManager>
     }
     public void reTry()//ÖØ¿ª
     {
+        soundManager.stopMusic();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }

@@ -17,5 +17,9 @@ public class SceneStart : MonoBehaviour
     void Update()
     {
         startPanel.fillAmount -= 1f / startTime * Time.deltaTime;
+        if(startPanel.fillAmount == 0f )
+        {
+            Destroy( gameObject );
+        }
     }
 }
