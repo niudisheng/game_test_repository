@@ -19,7 +19,4 @@ public class sceneManager : baseNomonoManager<sceneManager>
         Time.timeScale = 1;
     }
 
-    
-    
-
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 
 public class PlayerIncombat : MonoBehaviour
@@ -14,7 +15,14 @@ public class PlayerIncombat : MonoBehaviour
     private BoxCollider2D playerCollider;
     private SpriteRenderer PlayerRender;
     public bag playerBag;
-    public BoxCollider2D reBoundColli;
+    [Header("更改部分")]
+    public GameObject reBound;
+    BoxCollider2D reBoundColli;
+    Renderer reBoundRender;
+    public GameObject Bound;
+    BoxCollider2D BoundColli;
+    Renderer BoundRender;
+
     public GameObject MagicBal;
     public Transform MagicBallTrans;
     public BoxCollider2D shortBladeColli;
@@ -88,6 +96,11 @@ public class PlayerIncombat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        reBoundColli = reBound.GetComponent<BoxCollider2D>();
+        reBoundRender = reBound.GetComponent<Renderer>();
+        BoundColli = reBound.GetComponent<BoxCollider2D>();
+        BoundRender = reBound.GetComponent<Renderer>();
+
         isUseShield = false;
         isUseWand = false;
         isUseReBound = false;
@@ -356,7 +369,7 @@ public class PlayerIncombat : MonoBehaviour
     {
         InvincibleCd -= Time.deltaTime;
         if (haveShield && InvincibleCd<=0)//判断是否可以解锁无敌
-        {
+        {   //不无敌的情况
             if (isUseShield == true)
             {
                 isUseShield = false;
@@ -364,7 +377,12 @@ public class PlayerIncombat : MonoBehaviour
                 invincibleTime = skillInvincibleTime;//无敌状态开启   
                 InvincibleCd = InvincibleStartCd;
                 isSkillInvincible = true;
-                
+                BoundRender.enabled=true;
+
+            }
+            else
+            {
+                BoundRender.enabled=false;
             }
         }
     }
@@ -378,6 +396,8 @@ public class PlayerIncombat : MonoBehaviour
                 isUseReBound = false;
                 print("成功开启反弹护盾技能");
                 reBoundColli.enabled = true;
+                
+                reBoundRender.enabled = true;
                 StartCoroutine("deleteColli");
                 reBoundCd = startReBoundCd;
                 invincibleTime = ReBoundInvincibTime;
@@ -415,6 +435,7 @@ public class PlayerIncombat : MonoBehaviour
     {
         yield return new WaitForSeconds(reBoundTime);
         reBoundColli.enabled = false;
+        reBoundRender.enabled = false;
         isSkillInvincible = false;
     }
     public void shorBlade()//短刃的函数

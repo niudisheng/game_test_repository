@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class startmusic : MonoBehaviour
 {
+    public static startmusic Instance;
     // Start is called before the first frame update
     public string BGM;
-    void Start()
+    string prefabDirectory = "soundManager";
+    private void Awake()
     {
-        soundManager.Instance.playMusic(BGM);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        if (Instance != null)
+        {
+            Destroy(this);
+        }
+        Instance = this;
         
     }
+    void Start()
+    {
+        
+        if (soundManager.Instance == null)
+        {
+            
+            GameObject loadedPrefab = Resources.Load<GameObject>(prefabDirectory);
+            GameObject instantiatedPrefab = Instantiate(loadedPrefab);
+        }
+        soundManager.Instance.playMusic(BGM);
+    }  
 }
